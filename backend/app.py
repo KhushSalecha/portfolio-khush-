@@ -9,7 +9,20 @@ app = Flask(__name__)
 CORS(app)
 
 # Use directory of app or persistent path for SQLite database
-DB_PATH = os.environ.get('DATABASE_PATH') or os.path.join(os.path.dirname(os.path.abspath(__file__)), 'contacts.db')
+# On Vercel serverless / ephemeral containers, /tmp is writable
+DB_PATH = os.environ.get('DATABASE_PATH')
+if not DB_PATH:
+    if os.environ.get('VERCEL'):
+        DB_PATH = '/tmp/contacts.db'
+        seed_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'contacts.db')
+        if os.path.exists(seed_path) and not os.path.exists(DB_PATH):
+            try:
+                import shutil
+                shutil.copyfile(seed_path, DB_PATH)
+            except Exception:
+                pass
+    else:
+        DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'contacts.db')
 
 def init_db():
     conn = sqlite3.connect(DB_PATH)

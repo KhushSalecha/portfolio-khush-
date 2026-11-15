@@ -19,7 +19,7 @@ const mimeTypes = {
   '.glb': 'model/gltf-binary'
 };
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   const pathname = parsedUrl.pathname.replace(/\/+$/, '') || '/';
 
@@ -213,6 +213,9 @@ server.on('error', err => {
   }
 });
 
-startServer(port);
+// Listen when invoked as a standalone script or in an environment where PORT is provided
+if (process.env.PORT || require.main === module || !process.env.VERCEL) {
+  startServer(port);
+}
 
 module.exports = server;
