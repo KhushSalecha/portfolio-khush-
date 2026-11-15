@@ -3,7 +3,7 @@
   "services": {
     "app": {
       "root": ".",
-      "buildCommand": "echo Static build ready",
+      "framework": null,
       "outputDirectory": ".",
       "bindings": [
         {
