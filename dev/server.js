@@ -139,10 +139,11 @@ const serverHandler = async (req, res) => {
   }
 
   // Static file resolution
+  const ROOT_DIR = path.join(__dirname, '..');
   let urlPath = decodeURI(pathname);
   if (urlPath === '/' || urlPath.endsWith('/')) urlPath += 'index.html';
 
-  let filePath = path.join(__dirname, urlPath);
+  let filePath = path.join(ROOT_DIR, urlPath);
 
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
     filePath = path.join(filePath, 'index.html');

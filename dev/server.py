@@ -6,7 +6,7 @@ import mimetypes
 from urllib.parse import urlparse, parse_qs
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 
-DB_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'contacts.db')
+DB_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'contacts.db')
 
 def init_db():
     conn = sqlite3.connect(DB_FILE)
@@ -209,7 +209,7 @@ class PortfolioHandler(BaseHTTPRequestHandler):
         if not url_path or url_path.endswith('/'):
             url_path += 'index.html'
 
-        base_dir = os.path.dirname(os.path.abspath(__file__))
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         file_path = os.path.normpath(os.path.join(base_dir, url_path))
 
         # Check safety (prevent directory traversal)
