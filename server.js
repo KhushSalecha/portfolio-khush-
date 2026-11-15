@@ -19,7 +19,7 @@ const mimeTypes = {
   '.glb': 'model/gltf-binary'
 };
 
-const server = http.createServer(async (req, res) => {
+const serverHandler = async (req, res) => {
   const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   const pathname = parsedUrl.pathname.replace(/\/+$/, '') || '/';
 
@@ -188,7 +188,9 @@ const server = http.createServer(async (req, res) => {
     'Access-Control-Allow-Origin': '*'
   });
   fs.createReadStream(filePath).pipe(res);
-});
+};
+
+const server = http.createServer(serverHandler);
 
 let port = parseInt(process.env.PORT || 8080, 10);
 
@@ -213,6 +215,15 @@ server.on('error', err => {
   }
 });
 
-startServer(port);
+// Start listener when executed directly or when PORT is provided
+if (process.env.PORT || require.main === module || !process.env.VERCEL) {
+  startServer(port);
+}
 
-module.exports = server;
+function handler(req, res) {
+  return serverHandler(req, res);
+}
+handler.server = server;
+
+module.exports = handler;
+module.exports.default = handler;

@@ -3,7 +3,8 @@
   "services": {
     "app": {
       "root": ".",
-      "entrypoint": "server.js",
+      "buildCommand": "echo Static build ready",
+      "outputDirectory": ".",
       "bindings": [
         {
           "type": "service",

@@ -40,8 +40,11 @@ def init_db():
     conn.commit()
     conn.close()
 
-# Initialize DB on start
-init_db()
+# Initialize DB safely on start
+try:
+    init_db()
+except Exception as e:
+    print(f"Warning: initial DB creation deferred: {e}")
 
 @app.route('/health', methods=['GET'])
 @app.route('/', methods=['GET'])

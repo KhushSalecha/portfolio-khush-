@@ -2,8 +2,8 @@
   "name": "khush-salecha-portfolio",
   "version": "1.0.0",
   "description": "Interactive Game Boy Color 3D Developer Portfolio for Khush Salecha, built in the style of sadok.mx",
-  "main": "server.js",
   "scripts": {
+    "build": "echo Static build ready",
     "start": "node server.js",
     "start:py": "py server.py",
     "dev": "node server.js",
