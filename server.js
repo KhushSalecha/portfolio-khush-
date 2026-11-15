@@ -214,3 +214,5 @@ server.on('error', err => {
 });
 
 startServer(port);
+
+module.exports = server;

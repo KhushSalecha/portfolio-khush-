@@ -3,6 +3,7 @@
   "services": {
     "app": {
       "root": ".",
+      "entrypoint": "server.js",
       "bindings": [
         {
           "type": "service",
@@ -14,7 +15,8 @@
     },
     "backend": {
       "root": "backend",
-      "framework": "flask"
+      "framework": "flask",
+      "entrypoint": "app:app"
     }
   },
   "rewrites": [
@@ -32,4 +34,3 @@
     }
   ]
 }
-
