@@ -213,9 +213,6 @@ server.on('error', err => {
   }
 });
 
-// Listen when invoked as a standalone script or in an environment where PORT is provided
-if (process.env.PORT || require.main === module || !process.env.VERCEL) {
-  startServer(port);
-}
+startServer(port);
 
 module.exports = server;
