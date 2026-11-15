@@ -27,7 +27,32 @@ const server = http.createServer((req, res) => {
   if (req.method === 'POST' && pathname === '/api/contact') {
     let body = '';
     req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
+    req.on('end', async () => {
+      // 1. Check for bound Vercel Service URL (BACKEND_URL)
+      const backendBase = process.env.BACKEND_URL;
+      if (backendBase) {
+        try {
+          const targetUrl = new URL('/api/contact', backendBase);
+          const response = await fetch(targetUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': req.headers['content-type'] || 'application/json'
+            },
+            body: body
+          });
+          const text = await response.text();
+          res.writeHead(response.status, {
+            'Content-Type': response.headers.get('content-type') || 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          });
+          res.end(text);
+          return;
+        } catch (err) {
+          console.error('[Service Binding] Failed to call BACKEND_URL:', err.message);
+        }
+      }
+
+      // 2. Local fallback using db_helper.py
       let data = {};
       const ct = req.headers['content-type'] || '';
       if (ct.includes('application/json')) {
@@ -64,6 +89,25 @@ const server = http.createServer((req, res) => {
   }
 
   if (req.method === 'GET' && pathname === '/api/contacts') {
+    // 1. Check for bound Vercel Service URL (BACKEND_URL)
+    const backendBase = process.env.BACKEND_URL;
+    if (backendBase) {
+      try {
+        const targetUrl = new URL('/api/contacts', backendBase);
+        const response = await fetch(targetUrl);
+        const text = await response.text();
+        res.writeHead(response.status, {
+          'Content-Type': response.headers.get('content-type') || 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        });
+        res.end(text);
+        return;
+      } catch (err) {
+        console.error('[Service Binding] Failed to call BACKEND_URL:', err.message);
+      }
+    }
+
+    // 2. Local fallback using db_helper.py
     const py = spawn('py', ['db_helper.py', 'get'], { cwd: __dirname });
     let out = '';
     py.stdout.on('data', chunk => { out += chunk; });
@@ -72,6 +116,26 @@ const server = http.createServer((req, res) => {
       res.end(out || JSON.stringify({ success: true, contacts: [] }));
     });
     return;
+  }
+
+  if (req.method === 'GET' && pathname === '/api/contacts/export') {
+    const backendBase = process.env.BACKEND_URL;
+    if (backendBase) {
+      try {
+        const targetUrl = new URL('/api/contacts/export', backendBase);
+        const response = await fetch(targetUrl);
+        const text = await response.text();
+        res.writeHead(response.status, {
+          'Content-Type': 'text/csv; charset=utf-8',
+          'Content-Disposition': 'attachment; filename="khush_contacts.csv"',
+          'Access-Control-Allow-Origin': '*'
+        });
+        res.end(text);
+        return;
+      } catch (err) {
+        console.error('[Service Binding] Failed to call BACKEND_URL:', err.message);
+      }
+    }
   }
 
   // Static file resolution
