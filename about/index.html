@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>About · Khush Salecha</title>
+  <meta name="description" content="Khush Salecha is a second-year B.Tech student at Jain University, Kanakapura, specializing in Artificial Intelligence and Machine Learning (AIML).">
+  <link rel="canonical" href="/about/">
+  <meta name="theme-color" content="#0f1110">
+  <meta property="og:site_name" content="Khush Salecha">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About · Khush Salecha">
+  <meta property="og:description" content="Second-year B.Tech student in Artificial Intelligence and Machine Learning (AIML) at Jain University, Kanakapura.">
+  <meta property="og:url" content="/about/">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1.3,1.9&amp;family=Press+Start+2P&amp;family=Redaction+35:ital,wght@0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/_astro/island.Cu5ZDGLw.css">
+  <link rel="stylesheet" href="/_astro/BaseLayout.Cu-CeA6V.css">
+  <link rel="stylesheet" href="/_astro/about.Di41doWV.css">
+  <link rel="stylesheet" href="/_astro/blog.D5ECGHe1.css">
+  <style>
+    .contact-card {
+      background: #141916;
+      border: 1px solid #27342d;
+      border-radius: 6px;
+      padding: 24px;
+      margin: 20px 0 28px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    }
+    .contact-card__title {
+      font-family: "Press Start 2P", monospace;
+      font-size: 0.75rem;
+      color: #48bb78;
+      margin: 0 0 16px 0;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .form-label {
+      font-family: "Press Start 2P", monospace;
+      font-size: 0.6rem;
+      color: #92a49b;
+      letter-spacing: 0.04em;
+    }
+    .form-input {
+      background: #0d110f;
+      border: 1px solid #283730;
+      color: #f0f4f2;
+      padding: 12px 14px;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: #48bb78;
+      box-shadow: 0 0 0 2px rgba(72,187,120,0.25);
+      background: #111714;
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .form-btn {
+      background: #1f3d30;
+      border: 1px solid #326752;
+      color: #68d391;
+      font-family: "Press Start 2P", monospace;
+      font-size: 0.7rem;
+      padding: 12px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.15s ease;
+    }
+    .form-btn:hover {
+      background: #2a5543;
+      border-color: #48bb78;
+      color: #9ae6b4;
+      transform: translateY(-1px);
+    }
+    .form-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .form-db-btn {
+      color: #81e6d9;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+    }
+    .form-db-btn:hover {
+      text-decoration: underline;
+      color: #b2f5ea;
+    }
+    .form-alert {
+      margin-top: 18px;
+      padding: 14px 18px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      display: none;
+    }
+    .form-alert--success {
+      background: #12281e;
+      border: 1px solid #276749;
+      color: #9ae6b4;
+      display: block;
+    }
+    .form-alert--error {
+      background: #2d1818;
+      border: 1px solid #9b2c2c;
+      color: #feb2b2;
+      display: block;
+    }
+  </style>
+</head>
+<body class="case ab-page">
+  <a class="skip-link" href="#trainer-card">Skip to the trainer card</a>
+  
+  <nav class="back-nav" aria-label="Game Boy">
+    <a class="back" href="/" data-back data-island-loader data-slug="about" aria-label="Back to the Game Boy">BACK</a>
+  </nav>
+
+  <main id="main">
+    <article class="cs ab" id="case-about" data-slug="about" data-hero-vh="0.85">
+      <header class="cs-hero" data-fit="cover" style="--hero-aspect: 1920 / 1080">
+        <div class="cs-hero__media">
+          <video class="cs-hero__video" muted playsinline loop preload="none" poster="/media/hero/about-9bec8ae505-page-poster.webp" width="1920" height="1080" data-hero aria-hidden="true" tabindex="-1">
+            <source src="/media/hero/about-9bec8ae505-page-h264.mp4" type="video/mp4; codecs=&quot;avc1.4D4028&quot;">
+          </video>
+        </div>
+        <div class="cs-hero__caption">
+          <h1 tabindex="-1">Khush Salecha</h1>
+          <p class="cs-hero__tagline">B.Tech AIML Student · Software Developer · IoT Explorer</p>
+        </div>
+        <div class="cs-hero__dither" aria-hidden="true"></div>
+      </header>
+
+      <section class="ab-hero" id="trainer-card" aria-label="Trainer card">
+        <div class="ab-hero__grid">
+          <div class="ab-card">
+            <div class="ab-card__sprite" style="--art-w: 77px; --art-h: 95px; --art-s: 2; --art-s-lg: 2">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAABfCAYAAACtF0ogAAAACXBIWXMAAAPoAAAD6AG1e1JrAAAGeUlEQVR42u3dvYpdVRQH8IlPIKSys7Ey0VKJCKYQJKWY3kYQhTRJsBDBh7AUgk2wESwCSsDXsFWw8xGEEFkD6/KfNf+119ofN+djn8Bmcu+5c+ae36z9tfY+dy4uFvp348ZrL7F4zx3/DBiDKmFOCZVBypTpomtUOdAOuPNVy6nQzlUONCjPH90/4DyYf395TMv00VYLpmjymmzE7b4jKGFZOPmagdt9tGXRtERo043Tsu1ZCW4KNAsQYUVt2xSzAgF48eK/a52C4uAx+b9Fw8fTTKUEiKFpKaHJ14d33pgTDRv5bGfw/puvH2itaFOBMTSB8IoFmzajKxesICUwRNPHU6fAFU4hpLHH4oFOvWaAaF4bxsCmX2jxqilDwwHxgRa0aQh2oCXgMtOoqdc+ozknot37+KNTmTLTgRfPkFiUIdruAfWCvvzq/qlEYJj58LDYOXYBp7MAiyallJTU1ysa+142Lds8nM2XeRfOih633xOBbx4ug+ahlI5HafPNotlcWS1aS5StCq3UM3nHbFa2FDU1YNr4R2iLwrE8vneMoeEFZNCiKluDthgc66FwLbMXDaEiMDtUidDY+1pkJSm70JGtntiLRmDR+I5lhBdv30pTHq/aZtq0Jz89ffnZp1+kqqadAXgRtxo4D6MXTcBq0TDaN4H23SfvnopFYxeBE+5ogBuBMTgWbd4cdnWR5v3mWZaCTbhLc8xoom7hNoXGOokSWhRRGTjWW5cyJot3Bqw39faZeVCZdqwEZt+bNBtexC0+BCn1pmx0XgsW4ZWGOasa7GairpR5PRdatkNYxUS+pi1pBfN6zwjsx88/XG+6KBNl50LL7OFdbarIq6J4caPRMttSN5GU9JbaetA8KD2n7mnzsDadxW0F89YDdC+IzF0RbvNYCtY6RkMsO5xhG2h2s5TXG2WYAGWrVhJpCribtc/e9izKZux6sbgFD4cUOD3a/MpTBu3np48vS+tdeQKmbZri7f42n7//eXaJpl9rCo7/BOyvbx7McesiomFBSHsMXzPl/Z4eSgbNi84pIq0HjcHt/rbFDEaEZuEyK/9RNV5ldfeqJqtuGTQGx37mn9/fvlJ6XnfRK177m8lEmZ6rBtBDYxA/fHDT7Uj0eAb4yjXLf2698/aV4v0Q9rpeNNs71kRbhCYgFkXnqd5r2Dm//vXuZbk8ZiHwsZ6cQWXhatAyr69BY2CIZuG8lJaCvfftretoGTD22pFotXCsmdDn/rjz1jUwL9pK1VLBTpGGPwQxLFpUhZdCq+kMFMai6XPeea6B4cEWtBEdAUPr6QxGorkbF/H2Z1u86omRNqr3rPm+qF1jbRlr07Do3pTULlBM4DHACG4EWs3UK/p+L8o8MLnFW4uNeFkGbELTY6PRoulQS7RFYPjhAxZOzofnkchz72qWB7/9/vx0Ui/vvgRadiLvoZXydHhtGlH4GPN4rOqGH9mlqKM6gsz8sacjwc0wAmCLIuBeO4k2PW4jzH2PckA" width="154" height="190" alt="Khush Salecha Pixel Avatar" decoding="async">
+            </div>
+            <p class="ab-card__name">Khush Salecha</p>
+            <p class="ab-card__line">AIML student engineering software, IoT systems, and practical AI solutions.</p>
+            <dl class="ab-stats">
+              <div class="ab-stat">
+                <dt class="ab-stat__label">College/</dt>
+                <dd class="ab-stat__value">JAIN UNIV</dd>
+              </div>
+              <div class="ab-stat">
+                <dt class="ab-stat__label">Program/</dt>
+                <dd class="ab-stat__value">B.TECH AIML</dd>
+              </div>
+              <div class="ab-stat">
+                <dt class="ab-stat__label">Year/</dt>
+                <dd class="ab-stat__value">2ND YEAR</dd>
+              </div>
+            </dl>
+            <section class="ab-badges" aria-labelledby="about-badges">
+              <h2 class="ab-badges__label" id="about-badges">Badges</h2>
+              <ul class="ab-badges__list">
+                <li class="ab-badge" data-badge="thunder">
+                  <svg class="ab-badge__icon" viewBox="0 0 16 16" width="48" height="48" shape-rendering="crispEdges" aria-hidden="true">
+                    <path fill="#202020" d="M7 0h1v1h-1zM8 0h1v1h-1zM6 1h1v1h-1zM9 1h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM6 2h1v1h-1zM9 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM2 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM9 3h1v1h-1zM11 3h1v1h-1zM13 3h1v1h-1zM2 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM13 4h1v1h-1zM3 5h1v1h-1zM6 5h1v1h-1zM9 5h1v1h-1zM13 5h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM5 6h1v1h-1zM11 6h1v1h-1zM13 6h1v1h-1zM14 6h1v1h-1zM0 7h1v1h-1zM5 7h1v1h-1zM12 7h1v1h-1zM15 7h1v1h-1zM0 8h1v1h-1zM5 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM1 9h1v1h-1zM2 9h1v1h-1zM5 9h1v1h-1zM11 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM3 10h1v1h-1zM6 10h1v1h-1zM10 10h1v1h-1zM13 10h1v1h-1zM2 11h1v1h-1zM5 11h1v1h-1zM6 11h1v1h-1zM9 11h1v1h-1zM10 11h1v1h-1zM13 11h1v1h-1zM2 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM9 12h1v1h-1zM11 12h1v1h-1zM13 12h1v1h-1zM2 13h1v1h-1zM3 13h1v1h-1zM6 13h1v1h-1zM9 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM6 14h1v1h-1zM9 14h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1z"></path>
+                    <path fill="#f8c040" d="M7 1h1v1h-1zM8 1h1v1h-1zM7 2h1v1h-1zM3 3h1v1h-1zM7 3h1v1h-1zM3 4h1v1h-1zM7 4h1v1h-1zM4 5h1v1h-1zM4 6h1v1h-1zM1 7h1v1h-1zM2 7h1v1h-1zM3 7h1v1h-1z"></path>
+                    <path fill="#f08820" d="M8 2h1v1h-1zM8 3h1v1h-1zM12 3h1v1h-1zM4 4h1v1h-1zM8 4h1v1h-1zM11 4h1v1h-1zM5 5h1v1h-1zM10 5h1v1h-1zM11 5h1v1h-1zM12 6h1v1h-1zM4 7h1v1h-1zM13 7h1v1h-1zM14 7h1v1h-1zM1 8h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 9h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM11 10h1v1h-1zM3 11h1v1h-1zM4 11h1v1h-1zM7 11h1v1h-1zM11 11h1v1h-1zM3 12h1v1h-1zM7 12h1v1h-1zM7 13h1v1h-1z"></path>
+                    <path fill="#f8e070" d="M7 5h1v1h-1zM8 5h1v1h-1zM6 6h1v1h-1zM7 6h1v1h-1zM8 6h1v1h-1zM9 6h1v1h-1zM10 6h1v1h-1zM6 7h1v1h-1zM8 7h1v1h-1zM9 7h1v1h-1zM10 7h1v1h-1zM11 7h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM9 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM6 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM9 9h1v1h-1zM10 9h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1z"></path>
+                  </svg>
+                  <span class="ab-badge__text">
+                    <span class="ab-badge__name">AI &amp; Machine Learning</span>
+                    <span class="ab-badge__source">Gemini API &amp; Scored Models</span>
+                  </span>
+                </li>
+                <li class="ab-badge" data-badge="rainbow">
+                  <svg class="ab-badge__icon" viewBox="0 0 16 16" width="48" height="48" shape-rendering="crispEdges" aria-hidden="true">
+                    <path fill="#202020" d="M5 2h6v1H5zM3 3h2v1H3zM11 3h2v1h-2zM2 4h1v2H2zM13 4h1v2h-1zM1 6h1v4H1zM14 6h1v4h-1zM2 10h1v2H2zM13 10h1v2h-1zM3 12h2v1H3zM11 12h2v1h-2zM5 13h6v1H5z"></path>
+                    <path fill="#38a0f8" d="M5 3h6v1H5zM3 4h2v2H3zM11 4h2v2h-2zM2 6h1v4H2zM13 6h1v4h-1z"></path>
+                    <path fill="#40d860" d="M5 5h6v1H5zM4 6h1v3H4zM11 6h1v3h-1z"></path>
+                    <path fill="#f8c040" d="M5 7h6v2H5z"></path>
+                  </svg>
+                  <span class="ab-badge__text">
+                    <span class="ab-badge__name">Web Development</span>
+                    <span class="ab-badge__source">React · Vite · Tailwind</span>
+                  </span>
+                </li>
+                <li class="ab-badge" data-badge="cascade">
+                  <svg class="ab-badge__icon" viewBox="0 0 16 16" width="48" height="48" shape-rendering="crispEdges" aria-hidden="true">
+                    <path fill="#202020" d="M7 1h2v1H7zM6 2h1v1H6zM9 2h1v1H9zM5 3h1v1H5zM10 3h1v1h-1zM4 4h1v2H4zM11 4h1v2h-1zM3 6h1v3H3zM12 6h1v3h-1zM4 9h1v2H4zM11 9h1v2h-1zM5 11h1v1H5zM10 11h1v1h-1zM6 12h1v1H6zM9 12h1v1H9zM7 13h2v1H7z"></path>
+                    <path fill="#50c8f8" d="M7 2h2v2H7zM6 4h4v2H6zM5 6h6v3H5zM6 9h4v2H6zM7 11h2v1H7z"></path>
+                  </svg>
+                  <span class="ab-badge__text">
+                    <span class="ab-badge__name">IoT &amp; Embedded</span>
+                    <span class="ab-badge__source">ESP32 · Arduino · Sensors</span>
+                  </span>
+                </li>
+                <li class="ab-badge" data-badge="volcano">
+                  <svg class="ab-badge__icon" viewBox="0 0 16 16" width="48" height="48" shape-rendering="crispEdges" aria-hidden="true">
+                    <path fill="#202020" d="M6 1h4v1H6zM5 2h1v2H5zM10 2h1v2h-1zM4 4h1v4H4zM11 4h1v4h-1zM3 8h1v4H3zM12 8h1v4h-1zM2 12h1v2H2zM13 12h1v2h-1zM3 14h10v1H3z"></path>
+                    <path fill="#e84030" d="M6 3h4v2H6zM5 5h6v3H5zM4 8h8v3H4zM3 11h10v2H3z"></path>
+                    <path fill="#f8a030" d="M7 4h2v2H7zM6 6h4v2H6zM5 8h6v2H5zM4 11h8v1H4z"></path>
+                  </svg>
+                  <span class="ab-badge__text">
+                    <span class="ab-badge__name">Python Engineering</span>
+                    <span class="ab-badge__source">File I/O · JSON · CSV</span>
+                  </span>
+                </li>
+                <li class="ab-badge" data-badge="earth">
+                  <svg class="ab-badge__icon" viewBox="0 0 16 16" width="48" height="48" shape-rendering="crispEdges" aria-hidden="true">
+                    <path fill="#202020" d="M7 1h2v1H7zM5 2h2v1H5zM9 2h2v1H9zM3 3h2v1H3zM11 3h2v1h-2zM2 4h1v2H2zM13 4h1v2h-1zM1 6h1v4H1zM14 6h1v4h-1zM2 10h1v2H2zM13 10h1v2h-1zM3 12h2v1H3zM11 12h2v1h-2zM5 13h2v1H5zM9 13h2v1H9zM7 14h2v1H7z"></path>
+                    <path fill="#e09038" d="M7 2h2v1H7zM5 3h6v1H5zM3 4h10v2H3zM2 6h12v4H2zM3 10h10v2H3zM5 12h6v1H5zM7 13h2v1H7z"></path>
+                  </svg>
+                  <span class="ab-badge__text">
+                    <span class="ab-badge__name">Systems &amp; Architecture</span>
+                    <span class="ab-badge__source">OS Concepts · Scheduling</span>
+                  </span>
+                </li>
+                <li class="ab-badge" data-badge="soul">
+                  <svg class="ab-badge__icon" viewBox="0 0 16 16" width="48" height="48" shape-rendering="crispEdges" aria-hidden="true">
+                    <path fill="#202020" d="M6 1h4v1H6zM4 2h2v1H4zM10 2h2v1h-2zM3 3h1v2H3zM12 3h1v2h-1zM2 5h1v6H2zM13 5h1v6h-1zM3 11h1v2H3zM12 11h1v2h-1zM4 13h2v1H4zM10 13h2v1h-2zM6 14h4v1H6z"></path>
+                    <path fill="#d878d0" d="M6 2h4v1H6zM4 3h8v2H4zM3 5h10v6H3zM4 11h8v2H4zM6 13h4v1H6z"></path>
+                  </svg>
+                  <span class="ab-badge__text">
+                    <span class="ab-badge__name">Database Systems</span>
+                    <span class="ab-badge__source">SQLite · Structured Data</span>
+                  </span>
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="ab-prose">
+            <section class="ab-section" aria-labelledby="about-me-heading">
+              <h2 id="about-me-heading">About Me</h2>
+              <p>
+                I am <strong>Khush Salecha</strong>, a second-year student pursuing a Bachelor of Technology in <strong>Artificial Intelligence and Machine Learning (AIML)</strong> at <strong>Jain University, Kanakapura</strong>.
+              </p>
+              <p>
+                My passion lies at the intersection of practical software engineering, artificial intelligence, and hardware integration. Rather than treating theory in isolation, I focus on building tangible technology solutions that solve real-world problems—especially in high-impact domains such as smart agriculture, local-first computing, and embedded automation.
+              </p>
+              <p>
+                Through academic rigour, programming practice, and collaborative project engineering, I have worked across full-stack web applications, Python data pipelines, microcontroller firmware (ESP32/Arduino), relational databases, and architectural requirements planning.
+              </p>
+            </section>
+
+            <section class="ab-section" aria-labelledby="skills-heading">
+              <h2 id="skills-heading">Technical Skills &amp; Stack</h2>
+              <div class="ab-stack">
+                <div class="ab-stack__col">
+                  <h3>Programming Languages</h3>
+                  <ul>
+                    <li><strong>Python:</strong> Core fundamentals, menu-driven architectures, file I/O, exception recovery, and structured data manipulation.</li>
+                    <li><strong>JavaScript / HTML5 / CSS3:</strong> Modern ES6+, DOM manipulation, responsive layouts, and interactive components.</li>
+                    <li><strong>C / C++:</strong> Embedded programming, microcontroller logic, memory allocation, and algorithmic problem solving.</li>
+                  </ul>
+                </div>
+                <div class="ab-stack__col">
+                  <h3>Web &amp; Frameworks</h3>
+                  <ul>
+                    <li><strong>React &amp; Vite:</strong> Component lifecycle, hooks, state management, and fast bundle tooling.</li>
+                    <li><strong>Tailwind CSS:</strong> Utility-first styling, responsive grids, and design system implementation.</li>
+                    <li><strong>REST APIs:</strong> Integration with third-party endpoints (Open-Meteo, Gemini AI API, JSON endpoints).</li>
+                  </ul>
+                </div>
+                <div class="ab-stack__col">
+                  <h3>IoT &amp; Hardware</h3>
+                  <ul>
+                    <li><strong>ESP32 Microcontroller:</strong> Pin configuration, Wi-Fi telemetry, hardware-to-software bridges.</li>
+                    <li><strong>Arduino IDE:</strong> Firmware development, library integration, serial debugging, and sensor calibration.</li>
+                    <li><strong>Embedded Concepts:</strong> Analog/digital sensor readings, PWM, I2C, and device troubleshooting.</li>
+                  </ul>
+                </div>
+                <div class="ab-stack__col">
+                  <h3>Tools &amp; Infrastructure</h3>
+                  <ul>
+                    <li><strong>Git &amp; GitHub:</strong> Version control, branch management, pull requests, and collaborative codebases.</li>
+                    <li><strong>SQLite &amp; Databases:</strong> Relational schema design, SQL querying, transactions, and local data persistence.</li>
+                    <li><strong>Data Formats:</strong> JSON parsing, CSV streaming, serialization, and text logging pipelines.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section class="ab-section" aria-labelledby="coursework-heading">
+              <h2 id="coursework-heading">Technical Coursework &amp; Academic Foundation</h2>
+              <p>Foundational computer science concepts mastered through University coursework at Jain University:</p>
+              <dl class="ab-coursework-list">
+                <dt>Operating Systems</dt>
+                <dd>OS structure, system call lifecycles, Process Control Block (PCB), concurrency &amp; threads, process synchronization, CPU scheduling algorithms (FCFS, SJF, Round Robin, Priority Scheduling), deadlock characterization, and Banker's Algorithm.</dd>
+                
+                <dt>Computer Organization &amp; Architecture</dt>
+                <dd>Instruction cycle mechanics, register transfer level operations, interrupt handling vectors, Direct Memory Access (DMA), memory hierarchy, cache hit/miss semantics, and bus architectures.</dd>
+                
+                <dt>Algorithms &amp; Problem Solving</dt>
+                <dd>Algorithm complexity analysis (Big-O), waiting time and turnaround time calculations, sorting algorithms, greedy strategies, and structured data handling.</dd>
+                
+                <dt>Artificial Intelligence &amp; Machine Learning</dt>
+                <dd>Supervised learning concepts, heuristic search, rule-based scoring systems, prompt engineering with Gemini API, and predictive data modeling.</dd>
+              </dl>
+            </section>
+
+            <section class="ab-section" aria-labelledby="education-heading">
+              <h2 id="education-heading">Education</h2>
+              <div class="ab-edu">
+                <div class="ab-edu__item">
+                  <span class="ab-edu__school">Jain University, Kanakapura</span>
+                  <span class="ab-edu__degree">Bachelor of Technology (B.Tech) — Artificial Intelligence &amp; Machine Learning</span>
+                  <span class="ab-edu__meta">2nd Year (Sophomore) · Expected Graduation: 2027</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="ab-section" id="contact-me" aria-labelledby="contact-heading">
+              <h2 id="contact-heading">Contact &amp; Connect</h2>
+              <p>
+                Interested in collaborating, discussing AI/ML and IoT implementations, or reaching out directly? Submit the form below—all details are committed directly to my <strong>SQLite backend database (<code>contacts.db</code>)</strong> via Python.
+              </p>
+
+              <div class="contact-card">
+                <h3 class="contact-card__title">
+                  <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                  </svg>
+                  Get in Touch
+                </h3>
+
+                <form id="contactForm" onsubmit="submitContactForm(event)">
+                  <div class="form-grid">
+                    <div class="form-group">
+                      <label for="formName" class="form-label">Full Name *</label>
+                      <input type="text" id="formName" name="name" required placeholder="e.g. Alex Johnson" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="formNumber" class="form-label">Phone Number *</label>
+                      <input type="tel" id="formNumber" name="number" required placeholder="e.g. +91 98765 43210" class="form-input">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="formEmail" class="form-label">Email Address *</label>
+                    <input type="email" id="formEmail" name="email" required placeholder="e.g. alex@example.com" class="form-input">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="formMessage" class="form-label">Message (Optional)</label>
+                    <textarea id="formMessage" name="message" rows="3" placeholder="Briefly describe what you'd like to discuss or collaborate on..." class="form-input form-textarea"></textarea>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="submit" id="submitBtn" class="form-btn">
+                      ▶ SAVE TO DATABASE
+                    </button>
+
+                    <a href="/database/" class="form-db-btn">
+                      <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+                        <path d="M8 1a7 7 0 0 0-7 7v4a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a7 7 0 0 0-7-7z"/>
+                      </svg>
+                      View Live Database Records
+                    </a>
+                  </div>
+
+                  <div id="formAlert" class="form-alert"></div>
+                </form>
+              </div>
+
+              <ul class="ab-links">
+                <li><strong>GitHub:</strong> <a href="https://github.com/jitesh0216" target="_blank" rel="noopener noreferrer">github.com/jitesh0216</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/khush-salecha" target="_blank" rel="noopener noreferrer">linkedin.com/in/khush-salecha</a></li>
+                <li><strong>Email:</strong> <a href="mailto:khushsalecha@gmail.com">khushsalecha@gmail.com</a></li>
+                <li><strong>Location:</strong> Kanakapura / Bengaluru, Karnataka, India</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <nav class="end-menu ab-menu" aria-labelledby="about-end-menu">
+        <h2 class="end-menu__title" id="about-end-menu">Continue?</h2>
+        <ul class="end-menu__list">
+          <li>
+            <a class="end-menu__row" href="/" data-back data-end-back data-island-loader data-slug="about">
+              <span class="end-menu__cursor" aria-hidden="true"></span>
+              <span class="end-menu__key">Back</span>
+              <span class="end-menu__name">to the Game Boy</span>
+            </a>
+          </li>
+          <li>
+            <a class="end-menu__row" href="/projects/agriculture-platform/">
+              <span class="end-menu__cursor" aria-hidden="true"></span>
+              <span class="end-menu__key">See portfolio<span class="visually-hidden">:</span></span>
+              <span class="end-menu__name">Smart Agriculture Platform</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="case-footer">
+    <p>Khush Salecha · AIML Student &amp; Developer · <a href="/projects/">All projects</a> · <a href="/">Game Boy</a></p>
+  </footer>
+
+  <script>
+    async function submitContactForm(event) {
+      event.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const alertBox = document.getElementById('formAlert');
+      
+      const payload = {
+        name: document.getElementById('formName').value.trim(),
+        number: document.getElementById('formNumber').value.trim(),
+        email: document.getElementById('formEmail').value.trim(),
+        message: document.getElementById('formMessage').value.trim()
+      };
+
+      btn.disabled = true;
+      btn.textContent = 'SAVING TO SQLITE...';
+      alertBox.className = 'form-alert';
+      alertBox.style.display = 'none';
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        if (!res.ok || !data.success) {
+          throw new Error(data.error || 'Failed to save contact details.');
+        }
+
+        alertBox.className = 'form-alert form-alert--success';
+        alertBox.innerHTML = `
+          <strong>SUCCESS!</strong> Your details were committed to <code>contacts.db</code> as record <strong>#${data.id}</strong>.<br>
+          <span style="font-size:0.8rem; margin-top:4px; display:inline-block;">
+            <a href="/database/" style="color:#68d391; text-decoration:underline;">View in Database Table &rarr;</a>
+          </span>
+        `;
+        document.getElementById('contactForm').reset();
+      } catch (err) {
+        alertBox.className = 'form-alert form-alert--error';
+        alertBox.textContent = 'Error: ' + err.message;
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '▶ SAVE TO DATABASE';
+      }
+    }
+  </script>
+</body>
+</html>
+

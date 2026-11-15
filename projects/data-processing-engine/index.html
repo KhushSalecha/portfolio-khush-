@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Python Data Processing Engine · Khush Salecha</title>
+  <meta name="description" content="Structured Python file I/O utilities, JSON/CSV log parsing engines, and resilient record management programs.">
+  <link rel="canonical" href="/projects/data-processing-engine/">
+  <meta name="theme-color" content="#0f1110">
+  <meta property="og:site_name" content="Khush Salecha">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Python Data Processing Engine · Khush Salecha">
+  <meta property="og:description" content="Core Python systems programming, structured file persistence, and log analytics pipelines.">
+  <meta property="og:url" content="/projects/data-processing-engine/">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1.3,1.9&amp;family=Press+Start+2P&amp;family=Redaction+35:ital,wght@0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/_astro/island.Cu5ZDGLw.css">
+  <link rel="stylesheet" href="/_astro/BaseLayout.Cu-CeA6V.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#article-body">Skip to the article</a>
+  
+  <nav class="back-nav" aria-label="Game Boy">
+    <a class="back" href="/" data-back data-island-loader data-index="4" aria-label="Back to the Game Boy">BACK</a>
+  </nav>
+
+  <main id="main">
+    <article class="cs" id="case-data-processing-engine" data-slug="data-processing-engine" data-hero-vh="0.85" style="--accent: #319795">
+      <header class="cs-hero" data-fit="cover" style="--hero-aspect: 1920 / 1080">
+        <div class="cs-hero__media">
+          <video class="cs-hero__video" muted playsinline loop preload="none" poster="/media/hero/grindr-web-91ed0271a2-page-poster.webp" width="1920" height="1080" data-hero aria-hidden="true" tabindex="-1">
+            <source src="/media/hero/grindr-web-91ed0271a2-page-h264.mp4" type="video/mp4; codecs=&quot;avc1.4D4028&quot;">
+          </video>
+        </div>
+        <div class="cs-hero__caption">
+          <h1 tabindex="-1">Python Data Processing Engine</h1>
+          <p class="cs-hero__tagline">Structured file parsing, JSON/CSV log analytics, and robust record management systems.</p>
+        </div>
+        <div class="cs-hero__dither" aria-hidden="true"></div>
+      </header>
+
+      <div class="cs-body" id="article-body">
+        <dl class="cs-meta">
+          <dt>Category</dt>
+          <dd>Python Engineering · Systems Programming · Academic Practice</dd>
+          
+          <dt>Timeline</dt>
+          <dd>2026 · Core Implementations</dd>
+          
+          <dt>Repository</dt>
+          <dd>
+            <a href="https://github.com/jitesh0216" target="_blank" rel="noopener noreferrer">github.com/jitesh0216</a>
+          </dd>
+          
+          <dt>Stack</dt>
+          <dd>Python 3.x, File I/O Streams, JSON Parser, CSV Module, Defensive Exception Architecture</dd>
+          
+          <dt>Implemented Suites</dt>
+          <dd>Student File Manager, Stream Log Reader, JSON Anomaly Classifier, CSV Summarizer</dd>
+        </dl>
+
+        <p class="cs-impact">
+          Implemented a suite of production-grade Python utility programs focusing on resilient file I/O, streaming text log processing, structured JSON error categorization, and tabular CSV analytical reporting.
+        </p>
+
+        <div class="prose">
+          <h2>Overview &amp; Philosophy</h2>
+          <p>
+            Reliable systems engineering begins with mastering core fundamentals: how data moves between transient memory and persistent storage, how errors propagate, and how software behaves when input files are incomplete, corrupted, or absent.
+          </p>
+          <p>
+            This suite of academic and systems programming projects was constructed to test and solidify practical competency in <strong>Python 3</strong>, emphasizing defensive exception recovery, optimal loop control, and clean modular code organization.
+          </p>
+
+          <h2>Implemented Systems &amp; Technical Breakdown</h2>
+          
+          <h3>1. Student Record Management System (`students.txt`)</h3>
+          <p>
+            A persistent, menu-driven CLI utility enabling users to add, query, update, and display student academic profiles (Roll Number, Name, Course Marks). Key architectural facets include:
+          </p>
+          <ul>
+            <li>Safe file opening modes (<code>a+</code>, <code>r</code>) with context managers to guarantee immediate file handle release.</li>
+            <li>Delimited serialization and deserialization routines with data sanitization preventing newline injection.</li>
+            <li>Input validation loops that trap format anomalies before committing entries to disk.</li>
+          </ul>
+
+          <h3>2. Resilient Log File Reader (`log.txt`)</h3>
+          <p>
+            An enterprise-inspired log monitoring utility engineered to parse system event streams line-by-line without consuming excessive memory on large files:
+          </p>
+          <ul>
+            <li>Employs generator-based line streaming to ensure predictable O(1) memory overhead.</li>
+            <li>Detects and tallies critical error severity markers (such as <code>[ERROR]</code> and <code>[CRITICAL]</code>).</li>
+            <li>Robustly recovers from missing-file conditions using explicit <code>try...except FileNotFoundError</code> blocks.</li>
+          </ul>
+
+          <h3>3. JSON-Based Log Analyzer (`logs.json`)</h3>
+          <p>
+            Structured logging is the backbone of modern cloud microservices. This utility consumes JSON array logs containing timestamps, service names, and message payloads:
+          </p>
+          <ul>
+            <li>Parses and aggregates occurrences of <code>INFO</code>, <code>WARNING</code>, and <code>ERROR</code> entries.</li>
+            <li>Employs resilient handling for <code>json.JSONDecodeError</code>, flagging truncated or malformed records without halting execution.</li>
+            <li>Outputs clean summary statistics highlighting system health ratios.</li>
+          </ul>
+
+          <h3>4. CSV-Based Log Processing &amp; Summarization</h3>
+          <p>
+            An analytical script utilizing Python's built-in <code>csv</code> reader and dictionary mapping to process tabular execution summaries, filter anomalous rows, and export clean aggregated metrics for reporting dashboards.
+          </p>
+
+          <h2>Key Engineering Takeaways</h2>
+          <p>
+            Building these programs honed an instinct for defensive programming: never trusting raw external input, writing graceful error traps, and ensuring that software fails predictably and safely rather than abruptly crashing in production.
+          </p>
+        </div>
+
+        <nav class="end-menu" aria-labelledby="data-end-menu">
+          <h2 class="end-menu__title" id="data-end-menu">Continue?</h2>
+          <ul class="end-menu__list">
+            <li>
+              <a class="end-menu__row" href="/projects/apex-treasury-study/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Next<span class="visually-hidden"> project:</span></span>
+                <span class="end-menu__name">ApexTreasury Architecture Study</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/" data-back data-end-back data-island-loader data-index="4">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to the Game Boy</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="case-footer">
+    <p>Khush Salecha · AIML Student &amp; Developer · <a href="/projects/">All projects</a> · <a href="/">Game Boy</a></p>
+  </footer>
+</body>
+</html>
+

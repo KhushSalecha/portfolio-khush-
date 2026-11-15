@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Building Low-Cost IoT Gateways with ESP32 · Khush Salecha</title>
+  <meta name="description" content="Key lessons learned from wiring, calibrating soil moisture sensors, and flashing firmware on the ESP32 microcontroller for agricultural deployments.">
+  <link rel="canonical" href="/blog/iot-gateways-esp32/">
+  <meta name="theme-color" content="#0f1110">
+  <meta property="og:site_name" content="Khush Salecha">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Building Low-Cost IoT Gateways with ESP32 · Khush Salecha">
+  <meta property="og:url" content="/blog/iot-gateways-esp32/">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1.3,1.9&amp;family=Press+Start+2P&amp;family=Redaction+35:ital,wght@0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/_astro/island.Cu5ZDGLw.css">
+  <link rel="stylesheet" href="/_astro/BaseLayout.Cu-CeA6V.css">
+  <link rel="stylesheet" href="/_astro/blog.D5ECGHe1.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#article-body">Skip to the article</a>
+  
+  <nav class="back-nav" aria-label="Game Boy">
+    <a class="back" href="/blog/" data-back data-island-loader data-slug="blog" aria-label="Back to Blog">BACK</a>
+  </nav>
+
+  <main id="main">
+    <article class="cs bp" id="case-blog-iot-gateways-esp32" data-slug="blog/iot-gateways-esp32" data-hero-vh="0.6">
+      <header class="cs-hero" data-fit="cover" style="--hero-aspect: 1920 / 1080">
+        <div class="cs-hero__media">
+          <img class="cs-hero__video" src="/media/hero/inteligas-3e8d67f480-page-poster.webp" width="1920" height="1080" alt="" fetchpriority="high" decoding="async">
+        </div>
+        <div class="cs-hero__dither" aria-hidden="true"></div>
+      </header>
+
+      <div class="cs-body" id="article-body">
+        <header class="bp-head">
+          <h1 tabindex="-1">Building Low-Cost IoT Gateways with ESP32: Sensor Calibration &amp; Telemetry</h1>
+          <div class="bp-byline">
+            <p class="bp-byline__who">
+              <a class="bp-byline__name" href="/about/">Khush Salecha</a>
+              <span class="bp-byline__title">B.Tech AIML Student &amp; Developer</span>
+            </p>
+            <p class="bp-byline__when">
+              <time datetime="2026-11-04">Nov 4, 2026</time>
+              <span class="bp-byline__minutes">5 min read</span>
+            </p>
+          </div>
+        </header>
+
+        <div class="prose">
+          <p>
+            When building Internet of Things (IoT) prototypes for agricultural environments, the gap between theoretical schematics on a breadboard and physical reality in damp dirt is enormous. Over the past several months of working with the ESP32 microcontroller, I ran into almost every classic hardware trap: driver misconfigurations, voltage noise, and sensor corrosion.
+          </p>
+
+          <h2>1. The Problem with Resistive vs. Capacitive Probes</h2>
+          <p>
+            Beginner IoT tutorials almost universally suggest the cheap two-pronged resistive soil moisture sensor. In laboratory conditions over 15 minutes, it works fine. But insert it into moist soil with an active direct current (DC), and electrolysis begins immediately. Within three weeks, the copper traces completely dissolve into green copper oxide sludge, rendering readings useless.
+          </p>
+          <p>
+            Switching to <strong>capacitive soil moisture sensors</strong> (e.g., v1.2 probes with the 555 timer circuitry) solved this completely. Because the sensing traces are encased behind soldermask and measure permittivity through electric field capacitance, no direct DC current flows into the soil.
+          </p>
+
+          <h2>2. Taming the ESP32 ADC Non-Linearity</h2>
+          <p>
+            The ESP32 features a 12-bit Analog-to-Digital Converter (ADC), yielding integer values from 0 to 4095 across a 3.3V reference. However, the ESP32's internal SAR ADC suffers from notable non-linearity, especially in the bottom 100mV and top 100mV ranges.
+          </p>
+          <p>
+            To address this without expensive external operational amplifiers:
+          </p>
+          <ul>
+            <li>We applied hardware multi-sampling: reading 64 consecutive ADC samples spaced over 20ms and computing the median to discard electrical switching noise from the onboard Wi-Fi radio.</li>
+            <li>We utilized lookup calibration curves rather than simple <code>map()</code> linear scaling, ensuring moisture percentages mapped accurately between bone-dry air (approx. 3200 raw) and submerged water (approx. 1400 raw).</li>
+          </ul>
+
+          <h2>3. Serial Upload Traps &amp; Bootloader Sequences</h2>
+          <p>
+            Another common issue during flashing was the dreaded <code>A fatal error occurred: Failed to connect to ESP32: Timed out waiting for packet header</code>. On low-cost dev boards, the auto-reset circuit (controlled by the DTR and RTS lines of the USB-UART chip) lacks sufficient capacitance to pull GPIO 0 low at the exact reset moment.
+          </p>
+          <p>
+            Soldering a 10µF capacitor between the <code>EN</code> pin and <code>GND</code> reliably stabilized the reset pulse, enabling seamless firmware updates from the Arduino IDE without manual button pressing.
+          </p>
+
+          <h2>Final Thoughts</h2>
+          <p>
+            Working directly with embedded microcontrollers forces you to understand electrical realities that high-level software frameworks abstract away. It makes you a far more resilient software engineer when you understand every hop from analog electron to cloud dashboard.
+          </p>
+        </div>
+
+        <nav class="end-menu bp-menu" aria-labelledby="blog-post-end-menu">
+          <h2 class="end-menu__title" id="blog-post-end-menu">Continue?</h2>
+          <ul class="end-menu__list">
+            <li>
+              <a class="end-menu__row" href="/blog/local-first-agriculture/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Next<span class="visually-hidden"> post:</span></span>
+                <span class="end-menu__name">Architecting Local-First Software for Rural Agriculture</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/blog/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to Blog index</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/" data-back data-end-back data-island-loader data-slug="blog">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to the Game Boy</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="case-footer">
+    <p>Khush Salecha · AIML Student &amp; Developer · <a href="/projects/">All projects</a> · <a href="/">Game Boy</a></p>
+  </footer>
+</body>
+</html>
+

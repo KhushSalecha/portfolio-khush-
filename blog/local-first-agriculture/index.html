@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Architecting Local-First Software for Rural Agriculture · Khush Salecha</title>
+  <meta name="description" content="Why cloud-only architectures fail rural farmers, and how SQLite and local-first principles deliver resilient offline software.">
+  <link rel="canonical" href="/blog/local-first-agriculture/">
+  <meta name="theme-color" content="#0f1110">
+  <meta property="og:site_name" content="Khush Salecha">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Architecting Local-First Software for Rural Agriculture · Khush Salecha">
+  <meta property="og:url" content="/blog/local-first-agriculture/">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1.3,1.9&amp;family=Press+Start+2P&amp;family=Redaction+35:ital,wght@0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/_astro/island.Cu5ZDGLw.css">
+  <link rel="stylesheet" href="/_astro/BaseLayout.Cu-CeA6V.css">
+  <link rel="stylesheet" href="/_astro/blog.D5ECGHe1.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#article-body">Skip to the article</a>
+  
+  <nav class="back-nav" aria-label="Game Boy">
+    <a class="back" href="/blog/" data-back data-island-loader data-slug="blog" aria-label="Back to Blog">BACK</a>
+  </nav>
+
+  <main id="main">
+    <article class="cs bp" id="case-blog-local-first-agriculture" data-slug="blog/local-first-agriculture" data-hero-vh="0.6">
+      <header class="cs-hero" data-fit="cover" style="--hero-aspect: 1920 / 1080">
+        <div class="cs-hero__media">
+          <img class="cs-hero__video" src="/media/hero/pubpub-2f0ffea7e2-page-poster.webp" width="1920" height="1080" alt="" fetchpriority="high" decoding="async">
+        </div>
+        <div class="cs-hero__dither" aria-hidden="true"></div>
+      </header>
+
+      <div class="cs-body" id="article-body">
+        <header class="bp-head">
+          <h1 tabindex="-1">Architecting Local-First Software for Rural Agriculture</h1>
+          <div class="bp-byline">
+            <p class="bp-byline__who">
+              <a class="bp-byline__name" href="/about/">Khush Salecha</a>
+              <span class="bp-byline__title">B.Tech AIML Student &amp; Developer</span>
+            </p>
+            <p class="bp-byline__when">
+              <time datetime="2026-10-18">Oct 18, 2026</time>
+              <span class="bp-byline__minutes">6 min read</span>
+            </p>
+          </div>
+        </header>
+
+        <div class="prose">
+          <p>
+            Modern software engineering is dominated by cloud-first orthodoxy: everything lives on a remote Kubernetes cluster, APIs gate every button click, and if the client cannot reach the internet, the interface freezes behind a spinning loader.
+          </p>
+          <p>
+            In Bangalore's tech hubs with gigabit optical fiber, this architecture feels invisible. But travel just 60 kilometers out to rural agrarian communities in Kanakapura, and mobile data drops to intermittent 2G or disappears completely. For rural farmers attempting to log grain yields, track fertilizer expenditures, or manage inventory, a cloud-dependent app is effectively broken.
+          </p>
+
+          <h2>The Seven Ideals of Local-First Software</h2>
+          <p>
+            Drawing from Ink &amp; Switch's local-first principles, our design for the <strong>Farmers Offline Management Software</strong> centered around four immutable operational rules:
+          </p>
+          <ul>
+            <li><strong>Zero Latency:</strong> All user actions—inserting a record, querying crop history, generating an invoice—execute synchronously against the local NVMe/eMMC drive. Response times stay under 5 milliseconds.</li>
+            <li><strong>Multi-Device Freedom:</strong> The user owns their data. It lives on their disk in standard file formats, not locked inside an opaque proprietary cloud silo.</li>
+            <li><strong>Network Independence:</strong> The software never treats offline as an "exceptional error state." Offline is the default normal state; network connectivity is simply a pleasant bonus.</li>
+            <li><strong>Conflict-Resistant Synchronization:</strong> When connectivity is detected, changes are reconciled via monotonic timestamped queues rather than destructive overwrites.</li>
+          </ul>
+
+          <h2>Why SQLite Trumps Complex Client-Side Frameworks</h2>
+          <p>
+            While browser-based IndexedDB frameworks have gained popularity, they suffer from quota limits and browser cache purges. For desktop agricultural tools, <strong>embedded SQLite</strong> remains unbeatable.
+          </p>
+          <p>
+            SQLite provides atomic transactions with write-ahead logging (WAL mode). If the power cuts out midway through committing a 500-row farmer registry file, SQLite automatically rolls back to the last valid state without a single corrupted byte.
+          </p>
+
+          <h2>Human-Readable Exports as the Ultimate Safeguard</h2>
+          <p>
+            In addition to binary database storage, our software incorporates automated daily <strong>CSV and JSON dumps</strong>. A village cooperative worker may not know how to run SQL queries, but they understand Microsoft Excel or Google Sheets. Providing direct CSV exports ensures transparency, portability, and long-term data survival.
+          </p>
+        </div>
+
+        <nav class="end-menu bp-menu" aria-labelledby="blog-post-end-menu-2">
+          <h2 class="end-menu__title" id="blog-post-end-menu-2">Continue?</h2>
+          <ul class="end-menu__list">
+            <li>
+              <a class="end-menu__row" href="/blog/process-scheduling-internals/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Next<span class="visually-hidden"> post:</span></span>
+                <span class="end-menu__name">Understanding CPU Scheduling</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/blog/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to Blog index</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/" data-back data-end-back data-island-loader data-slug="blog">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to the Game Boy</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="case-footer">
+    <p>Khush Salecha · AIML Student &amp; Developer · <a href="/projects/">All projects</a> · <a href="/">Game Boy</a></p>
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Understanding CPU Scheduling Internals · Khush Salecha</title>
+  <meta name="description" content="A deep dive into operating system CPU scheduling: FCFS, SJF, Round Robin, and Priority Scheduling calculations.">
+  <link rel="canonical" href="/blog/process-scheduling-internals/">
+  <meta name="theme-color" content="#0f1110">
+  <meta property="og:site_name" content="Khush Salecha">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Understanding CPU Scheduling Internals · Khush Salecha">
+  <meta property="og:url" content="/blog/process-scheduling-internals/">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1.3,1.9&amp;family=Press+Start+2P&amp;family=Redaction+35:ital,wght@0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/_astro/island.Cu5ZDGLw.css">
+  <link rel="stylesheet" href="/_astro/BaseLayout.Cu-CeA6V.css">
+  <link rel="stylesheet" href="/_astro/blog.D5ECGHe1.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#article-body">Skip to the article</a>
+  
+  <nav class="back-nav" aria-label="Game Boy">
+    <a class="back" href="/blog/" data-back data-island-loader data-slug="blog" aria-label="Back to Blog">BACK</a>
+  </nav>
+
+  <main id="main">
+    <article class="cs bp" id="case-blog-process-scheduling-internals" data-slug="blog/process-scheduling-internals" data-hero-vh="0.6">
+      <header class="cs-hero" data-fit="cover" style="--hero-aspect: 1920 / 1080">
+        <div class="cs-hero__media">
+          <img class="cs-hero__video" src="/media/hero/grindr-web-91ed0271a2-page-poster.webp" width="1920" height="1080" alt="" fetchpriority="high" decoding="async">
+        </div>
+        <div class="cs-hero__dither" aria-hidden="true"></div>
+      </header>
+
+      <div class="cs-body" id="article-body">
+        <header class="bp-head">
+          <h1 tabindex="-1">Understanding CPU Scheduling: From FCFS and SJF to Round Robin</h1>
+          <div class="bp-byline">
+            <p class="bp-byline__who">
+              <a class="bp-byline__name" href="/about/">Khush Salecha</a>
+              <span class="bp-byline__title">B.Tech AIML Student &amp; Developer</span>
+            </p>
+            <p class="bp-byline__when">
+              <time datetime="2026-09-29">Sep 29, 2026</time>
+              <span class="bp-byline__minutes">7 min read</span>
+            </p>
+          </div>
+        </header>
+
+        <div class="prose">
+          <p>
+            In my second-year Operating Systems coursework at Jain University, one foundational area that completely transformed how I conceptualize computer software was <strong>CPU scheduling</strong>. Modern users perceive their operating systems as running dozens of applications simultaneously. In truth, single CPU cores switch context between competing processes in nanosecond slices, governed by mathematical scheduling algorithms.
+          </p>
+
+          <h2>The Anatomy of the Process Control Block (PCB)</h2>
+          <p>
+            Every task managed by the OS kernel is tracked by a <strong>Process Control Block (PCB)</strong>. When an interrupt or timer tick occurs, the CPU must snapshot the active process's Program Counter (PC), CPU registers, memory limits, and I/O status into its PCB before loading the next candidate from the Ready Queue.
+          </p>
+
+          <h2>Comparing Core Scheduling Strategies</h2>
+          
+          <h3>1. First Come, First Served (FCFS)</h3>
+          <p>
+            The simplest non-preemptive algorithm: processes are dispatched strictly in arrival sequence. While trivially easy to implement via a FIFO queue, FCFS suffers heavily from the <strong>Convoy Effect</strong>. If a single CPU-bound process with a 100ms burst arrives ahead of three quick 2ms I/O tasks, the quick tasks starve in the ready queue, dramatically degrading the average waiting time.
+          </p>
+
+          <h3>2. Shortest Job First (SJF) &amp; Preemptive SRTF</h3>
+          <p>
+            SJF associates with each process the length of its next CPU burst, prioritizing the smallest burst first. Mathematically, SJF is provably optimal—it yields the minimum average waiting time across any scheduling scheme.
+          </p>
+          <p>
+            However, pure SJF is difficult to implement in practice because the kernel cannot predict the exact duration of a future CPU burst. Real-world systems approximate burst times using exponential smoothing over historical execution runs.
+          </p>
+
+          <h3>3. Round Robin (RR)</h3>
+          <p>
+            Designed specifically for time-sharing systems, Round Robin assigns a fixed unit of time known as a <strong>time quantum</strong> (typically 10 to 100 milliseconds). The ready queue is treated as a circular queue.
+          </p>
+          <ul>
+            <li><strong>If the quantum is too large:</strong> RR degenerates into simple FCFS.</li>
+            <li><strong>If the quantum is too small:</strong> Context switching overhead dominates, causing the CPU to spend more time saving and restoring registers than executing user instructions.</li>
+          </ul>
+
+          <h2>Why This Matters for Software Developers</h2>
+          <p>
+            Understanding process scheduling isn't just an academic exercise. Whether you are managing asynchronous event loops in Node.js, configuring worker threads in Python, or tuning RTOS priority tasks on an ESP32, knowing how the underlying operating system allocates CPU time is crucial for writing non-blocking, responsive software.
+          </p>
+        </div>
+
+        <nav class="end-menu bp-menu" aria-labelledby="blog-post-end-menu-3">
+          <h2 class="end-menu__title" id="blog-post-end-menu-3">Continue?</h2>
+          <ul class="end-menu__list">
+            <li>
+              <a class="end-menu__row" href="/blog/gemini-api-agriculture/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Next<span class="visually-hidden"> post:</span></span>
+                <span class="end-menu__name">Integrating LLMs into Domain Web Platforms</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/blog/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to Blog index</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/" data-back data-end-back data-island-loader data-slug="blog">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to the Game Boy</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="case-footer">
+    <p>Khush Salecha · AIML Student &amp; Developer · <a href="/projects/">All projects</a> · <a href="/">Game Boy</a></p>
+  </footer>
+</body>
+</html>
+

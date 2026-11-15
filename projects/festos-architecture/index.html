@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>FestOS — College Fest Architecture · Khush Salecha</title>
+  <meta name="description" content="System architecture, requirements analysis, and database planning for a college fest platform catering to 2,400+ attendees.">
+  <link rel="canonical" href="/projects/festos-architecture/">
+  <meta name="theme-color" content="#0f1110">
+  <meta property="og:site_name" content="Khush Salecha">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FestOS — College Fest Architecture · Khush Salecha">
+  <meta property="og:description" content="Enterprise-scale event management planning, dual-portal authentication, and database modeling for 2,400 attendees.">
+  <meta property="og:url" content="/projects/festos-architecture/">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1.3,1.9&amp;family=Press+Start+2P&amp;family=Redaction+35:ital,wght@0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/_astro/island.Cu5ZDGLw.css">
+  <link rel="stylesheet" href="/_astro/BaseLayout.Cu-CeA6V.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#article-body">Skip to the article</a>
+  
+  <nav class="back-nav" aria-label="Game Boy">
+    <a class="back" href="/" data-back data-island-loader data-index="3" aria-label="Back to the Game Boy">BACK</a>
+  </nav>
+
+  <main id="main">
+    <article class="cs" id="case-festos-architecture" data-slug="festos-architecture" data-hero-vh="0.85" style="--accent: #9f7aea">
+      <header class="cs-hero" data-fit="cover" style="--hero-aspect: 1920 / 1080">
+        <div class="cs-hero__media">
+          <video class="cs-hero__video" muted playsinline loop preload="none" poster="/media/hero/madonna-live-b588ba990c-page-poster.webp" width="1920" height="1080" data-hero aria-hidden="true" tabindex="-1">
+            <source src="/media/hero/madonna-live-b588ba990c-page-h264.mp4" type="video/mp4; codecs=&quot;avc1.4D4028&quot;">
+          </video>
+        </div>
+        <div class="cs-hero__caption">
+          <h1 tabindex="-1">FestOS — College Fest Architecture</h1>
+          <p class="cs-hero__tagline">College fest platform architecture and database planning for 2,400+ attendees.</p>
+        </div>
+        <div class="cs-hero__dither" aria-hidden="true"></div>
+      </header>
+
+      <div class="cs-body" id="article-body">
+        <dl class="cs-meta">
+          <dt>Category</dt>
+          <dd>System Architecture · UI/UX Design · Requirements Engineering · Data Modeling</dd>
+          
+          <dt>Timeline</dt>
+          <dd>2026 · Planning &amp; Specification Phase</dd>
+          
+          <dt>Target Volume</dt>
+          <dd>2,400+ Student Attendees · 150+ Core Organizing Team Members</dd>
+          
+          <dt>Key Disciplines</dt>
+          <dd>Role-Based Access Control (RBAC), Database Schema Design, Wireframing, Shift Scheduling</dd>
+        </dl>
+
+        <p class="cs-impact">
+          Spearheaded the technical requirements analysis and system architecture for a college fest digital portal, modeling database capacity for 2,400+ students and bifurcating administration workflows from public attendee experiences.
+        </p>
+
+        <div class="prose">
+          <h2>Project Context &amp; Objective</h2>
+          <p>
+            University fests are logistical marathons involving multi-track cultural and technical competitions, merchandise distributions, attendee ticketing, and real-time scheduling. Without a unified system, information fragments across spreadsheets, WhatsApp channels, and paper logs, resulting in entry bottlenecks and miscommunication.
+          </p>
+          <p>
+            <strong>FestOS</strong> was initiated to establish a robust digital infrastructure blueprint capable of smoothly orchestrating operations for an anticipated student audience of 2,400+ participants and a multi-tiered student organizing committee.
+          </p>
+
+          <h2>Dual-Portal Architecture &amp; Role-Based Access</h2>
+          <p>
+            A fundamental finding of the requirements analysis was the need to partition the application into two dedicated portals with distinct operational scopes:
+          </p>
+          <ul>
+            <li>
+              <strong>Student Attendee Portal:</strong> Focused on friction-free event exploration, digital pass generation, workshop registrations, schedule notifications, and live competition result boards.
+            </li>
+            <li>
+              <strong>Core Committee Command Portal:</strong> Restricted administrative hub managing volunteer shift rosters, volunteer roles and contact trees, stage equipment logistics, entry gate QR ticket scanning, and merchandise dispatch tracking.
+            </li>
+          </ul>
+
+          <h2>Database Schema &amp; Scale Planning</h2>
+          <p>
+            With 2,400 attendees actively interacting during high-concurrency event registration bursts, the database architecture required thoughtful relational modeling:
+          </p>
+          <ul>
+            <li><strong>Normalized Entity Structures:</strong> Explicit tables for <code>Students</code>, <code>Registrations</code>, <code>Events</code>, <code>Volunteers</code>, <code>Shifts</code>, and <code>MerchandiseLogs</code>.</li>
+            <li><strong>Concurrency Control:</strong> Strategies to prevent race conditions during capped-capacity workshop bookings (using row-level locking and atomic reservation checks).</li>
+            <li><strong>Audit Logging:</strong> Granular tracking of ticket validation timestamps and check-in checkpoints to maintain crowd safety audits.</li>
+          </ul>
+
+          <h2>UI/UX Planning &amp; Wireframing</h2>
+          <p>
+            The project synthesized team feedback into structured UI wireframes prioritizing mobile responsiveness—recognizing that 95% of students navigate fest platforms on smartphones amidst loud, crowded festival venues. Key design elements included high-contrast typography, offline-cached digital passes, and instant search filtering across 30+ simultaneous events.
+          </p>
+
+          <h2>Key Engineering Takeaways</h2>
+          <p>
+            This project deepened my appreciation for the foundational pre-coding phases of software development: meticulous requirements gathering, identifying edge cases before writing a line of code, and translating human logistical challenges into structured database schemas.
+          </p>
+        </div>
+
+        <nav class="end-menu" aria-labelledby="fest-end-menu">
+          <h2 class="end-menu__title" id="fest-end-menu">Continue?</h2>
+          <ul class="end-menu__list">
+            <li>
+              <a class="end-menu__row" href="/projects/data-processing-engine/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Next<span class="visually-hidden"> project:</span></span>
+                <span class="end-menu__name">Python Data Processing Engine</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/" data-back data-end-back data-island-loader data-index="3">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to the Game Boy</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="case-footer">
+    <p>Khush Salecha · AIML Student &amp; Developer · <a href="/projects/">All projects</a> · <a href="/">Game Boy</a></p>
+  </footer>
+</body>
+</html>
+

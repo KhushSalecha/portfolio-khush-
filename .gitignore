@@ -1,0 +1,19 @@
+# Database
+*.db
+*.sqlite3
+
+# Node dependencies
+node_modules/
+npm-debug.log*
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+
+# OS and temporary files
+.DS_Store
+Thumbs.db
+*.tmp

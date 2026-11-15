@@ -1,0 +1,47 @@
+{
+  "src": "/audio/ui.mp3",
+  "sampleRate": 48000,
+  "gap": 0.1,
+  "cues": {
+    "boot-chime": {
+      "start": 0,
+      "duration": 0.770104
+    },
+    "move": {
+      "start": 0.870104,
+      "duration": 0.08
+    },
+    "bump": {
+      "start": 1.050104,
+      "duration": 0.09
+    },
+    "confirm": {
+      "start": 1.240104,
+      "duration": 0.15
+    },
+    "back": {
+      "start": 1.490104,
+      "duration": 0.15
+    },
+    "whoosh": {
+      "start": 1.740104,
+      "duration": 0.7
+    },
+    "power": {
+      "start": 2.540104,
+      "duration": 0.16
+    },
+    "trainer-landed": {
+      "start": 2.800104,
+      "duration": 0.22775
+    },
+    "reveal": {
+      "start": 3.127854,
+      "duration": 1.725167
+    },
+    "text-blip": {
+      "start": 4.953021,
+      "duration": 0.192479
+    }
+  }
+}

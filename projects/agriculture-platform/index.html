@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Smart Agriculture Web Platform · Khush Salecha</title>
+  <meta name="description" content="AI-assisted agriculture platform with smart crop recommendation, irrigation scheduling, and real-time weather monitoring.">
+  <link rel="canonical" href="/projects/agriculture-platform/">
+  <meta name="theme-color" content="#0f1110">
+  <meta property="og:site_name" content="Khush Salecha">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Smart Agriculture Web Platform · Khush Salecha">
+  <meta property="og:description" content="AI-assisted crop recommendation, smart irrigation, and live weather monitoring to empower agricultural communities.">
+  <meta property="og:url" content="/projects/agriculture-platform/">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1.3,1.9&amp;family=Press+Start+2P&amp;family=Redaction+35:ital,wght@0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/_astro/island.Cu5ZDGLw.css">
+  <link rel="stylesheet" href="/_astro/BaseLayout.Cu-CeA6V.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#article-body">Skip to the article</a>
+  
+  <nav class="back-nav" aria-label="Game Boy">
+    <a class="back" href="/" data-back data-island-loader data-index="0" aria-label="Back to the Game Boy">BACK</a>
+  </nav>
+
+  <main id="main">
+    <article class="cs" id="case-agriculture-platform" data-slug="agriculture-platform" data-hero-vh="0.85" style="--accent: #38b2ac">
+      <header class="cs-hero" data-fit="cover" style="--hero-aspect: 1920 / 1080">
+        <div class="cs-hero__media">
+          <video class="cs-hero__video" muted playsinline loop preload="none" poster="/media/hero/mapswipe-b9e2629238-page-poster.webp" width="1920" height="1080" data-hero aria-hidden="true" tabindex="-1">
+            <source src="/media/hero/mapswipe-b9e2629238-page-h264.mp4" type="video/mp4; codecs=&quot;avc1.4D4028&quot;">
+          </video>
+        </div>
+        <div class="cs-hero__caption">
+          <h1 tabindex="-1">Smart Agriculture Web Platform</h1>
+          <p class="cs-hero__tagline">AI-assisted crop recommendation, smart irrigation, and live meteorological insights.</p>
+        </div>
+        <div class="cs-hero__dither" aria-hidden="true"></div>
+      </header>
+
+      <div class="cs-body" id="article-body">
+        <dl class="cs-meta">
+          <dt>Category</dt>
+          <dd>Web Development · Agriculture Technology · AI/ML</dd>
+          
+          <dt>Timeline</dt>
+          <dd>2026 · Active Development</dd>
+          
+          <dt>Stack</dt>
+          <dd>React, Vite, Tailwind CSS, Python, SQLite, REST APIs, Gemini API, Open-Meteo</dd>
+          
+          <dt>Live Demos</dt>
+          <dd>
+            <a href="https://agriculture-project-nine.vercel.app/" target="_blank" rel="noopener noreferrer">Live Agriculture Platform</a> · 
+            <a href="https://smartfarm-v2.vercel.app/" target="_blank" rel="noopener noreferrer">SmartFarm V2</a>
+          </dd>
+          
+          <dt>Repositories</dt>
+          <dd>
+            <a href="https://github.com/menarayan15-boop/Agriculture-Project/tree/jitesh" target="_blank" rel="noopener noreferrer">GitHub — Jitesh Branch</a> · 
+            <a href="https://github.com/menarayan15-boop/Agriculture-Project/tree/master" target="_blank" rel="noopener noreferrer">GitHub — Master Branch</a>
+          </dd>
+        </dl>
+
+        <p class="cs-impact">
+          Engineered an end-to-end digital agriculture platform connecting smallholder farmers with automated crop recommendations, soil health scoring, live weather telemetry, and offline-ready agricultural advisories.
+        </p>
+
+        <div class="prose">
+          <h2>Overview &amp; Problem Statement</h2>
+          <p>
+            Smallholder farmers frequently encounter crop failures and inefficient water usage due to unpredictable weather patterns, suboptimal soil selection, and limited access to agronomic expertise. Most agricultural advisory software is either overly complex, requiring expensive enterprise subscriptions, or assumes high-speed broadband connectivity that does not exist in rural farmland.
+          </p>
+          <p>
+            The <strong>Smart Agriculture Web Platform</strong> was conceived as a lightweight, accessible digital companion that aggregates real-time environmental data, provides predictive crop-suitability models, and offers actionable irrigation advice tailored to the farmer's specific microclimate.
+          </p>
+
+          <h2>Key Architectural Features</h2>
+          <ul>
+            <li>
+              <strong>AI-Assisted Crop Recommendation:</strong> Combines rule-based agronomic suitability scoring with Google Gemini API integrations to assess soil parameters (pH, nitrogen, phosphorus, potassium) alongside seasonal forecasts.
+            </li>
+            <li>
+              <strong>Smart Irrigation Scheduling:</strong> Calculates evapotranspiration estimates based on temperature, relative humidity, and precipitation data fetched from the Open-Meteo REST API.
+            </li>
+            <li>
+              <strong>Soil Health &amp; Crop Health Diagnostics:</strong> Provides structured assessments allowing farmers to evaluate land viability and identify common crop pathologies early.
+            </li>
+            <li>
+              <strong>Farmer Profiles &amp; Service Marketplace:</strong> Conceptual modules for farmer profiles, equipment rental matching, and soil testing laboratory directories.
+            </li>
+            <li>
+              <strong>Offline-First &amp; PWA Accessibility:</strong> Designed with service workers and local caching paradigms to allow access in regions with intermittent or absent network coverage.
+            </li>
+            <li>
+              <strong>Low-Bandwidth Communication Planning:</strong> Architectural considerations for SMS, IVR (Interactive Voice Response), and USSD gateways to ensure technology reach even on basic feature phones.
+            </li>
+          </ul>
+
+          <h2>Technical Architecture &amp; Implementation</h2>
+          <p>
+            The application frontend was constructed using <strong>React</strong> bundled with <strong>Vite</strong> for rapid Hot Module Replacement (HMR) and optimized static asset chunking. <strong>Tailwind CSS</strong> was utilized to implement a clean, high-contrast, accessible interface that renders seamlessly across both mobile handheld devices and desktop workstations.
+          </p>
+          <p>
+            The backend pipeline leverages <strong>Python</strong> microservices interacting with <strong>SQLite</strong> for structured persistence of crop profiles, regional weather caches, and farmer query logs. By decoupling the deterministic rule-scoring engine from the generative LLM advisory layer, the platform guarantees immediate deterministic answers while enriching explanations with contextual conversational AI.
+          </p>
+
+          <h2>Key Engineering Takeaways</h2>
+          <p>
+            Working on this project reinforced the critical importance of designing software for constraints: minimal payload sizes, resilient error-recovery when third-party APIs timeout, and intuitive UI paradigms that bridge complex agronomic metrics into practical, everyday advice for farmers.
+          </p>
+        </div>
+
+        <nav class="end-menu" aria-labelledby="agri-end-menu">
+          <h2 class="end-menu__title" id="agri-end-menu">Continue?</h2>
+          <ul class="end-menu__list">
+            <li>
+              <a class="end-menu__row" href="/projects/smart-farming-iot/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Next<span class="visually-hidden"> project:</span></span>
+                <span class="end-menu__name">Smart Farming IoT Integration</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/" data-back data-end-back data-island-loader data-index="0">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to the Game Boy</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="case-footer">
+    <p>Khush Salecha · AIML Student &amp; Developer · <a href="/projects/">All projects</a> · <a href="/">Game Boy</a></p>
+  </footer>
+</body>
+</html>
+

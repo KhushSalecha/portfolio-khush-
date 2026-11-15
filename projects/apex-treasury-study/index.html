@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>ApexTreasury Fintech Architecture Study · Khush Salecha</title>
+  <meta name="description" content="In-depth technical architecture study and analysis of EXCHEQUER (ApexTreasury) financial software and compliance systems.">
+  <link rel="canonical" href="/projects/apex-treasury-study/">
+  <meta name="theme-color" content="#0f1110">
+  <meta property="og:site_name" content="Khush Salecha">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ApexTreasury Fintech Architecture Study · Khush Salecha">
+  <meta property="og:description" content="Deep-dive architectural analysis of enterprise treasury management, ledger consistency, and financial software.">
+  <meta property="og:url" content="/projects/apex-treasury-study/">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1.3,1.9&amp;family=Press+Start+2P&amp;family=Redaction+35:ital,wght@0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/_astro/island.Cu5ZDGLw.css">
+  <link rel="stylesheet" href="/_astro/BaseLayout.Cu-CeA6V.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#article-body">Skip to the article</a>
+  
+  <nav class="back-nav" aria-label="Game Boy">
+    <a class="back" href="/" data-back data-island-loader data-index="5" aria-label="Back to the Game Boy">BACK</a>
+  </nav>
+
+  <main id="main">
+    <article class="cs" id="case-apex-treasury-study" data-slug="apex-treasury-study" data-hero-vh="0.85" style="--accent: #805ad5">
+      <header class="cs-hero" data-fit="cover" style="--hero-aspect: 1920 / 1080">
+        <div class="cs-hero__media">
+          <video class="cs-hero__video" muted playsinline loop preload="none" poster="/media/hero/leangap-594f7b5b26-page-poster.webp" width="1920" height="1080" data-hero aria-hidden="true" tabindex="-1">
+            <source src="/media/hero/leangap-594f7b5b26-page-h264.mp4" type="video/mp4; codecs=&quot;avc1.4D4028&quot;">
+          </video>
+        </div>
+        <div class="cs-hero__caption">
+          <h1 tabindex="-1">ApexTreasury Architecture Study</h1>
+          <p class="cs-hero__tagline">Architectural breakdown of fintech compliance, auditing pipelines, and transaction ledgers.</p>
+        </div>
+        <div class="cs-hero__dither" aria-hidden="true"></div>
+      </header>
+
+      <div class="cs-body" id="article-body">
+        <dl class="cs-meta">
+          <dt>Category</dt>
+          <dd>Technical Documentation · Software Architecture · Fintech Concepts</dd>
+          
+          <dt>Timeline</dt>
+          <dd>2026 · Architectural Dossier Study</dd>
+          
+          <dt>Subject Dossier</dt>
+          <dd>EXCHEQUER (ApexTreasury) Enterprise Technical Specification</dd>
+          
+          <dt>Core Domains</dt>
+          <dd>Treasury Management Systems (TMS), Idempotent Ledgers, Audit Trails, Compliance Protocols</dd>
+          
+          <dt>Context Note</dt>
+          <dd>Academic architecture research and system documentation breakdown</dd>
+        </dl>
+
+        <p class="cs-impact">
+          Conducted an in-depth technical analysis of an enterprise-grade fintech project dossier, dissecting high-throughput transaction pipelines, ledger immutability patterns, and regulatory auditing architectures.
+        </p>
+
+        <div class="prose">
+          <h2>Overview &amp; Purpose of Study</h2>
+          <p>
+            Enterprise financial software operates under the most stringent fault-tolerance, latency, and compliance mandates in modern engineering. A single unhandled concurrency bug or ledger inconsistency can result in millions of dollars in erroneous transfers or severe regulatory sanctions.
+          </p>
+          <p>
+            As part of an independent architectural investigation, I worked through the comprehensive technical project dossier for <strong>EXCHEQUER (ApexTreasury)</strong>—a high-volume treasury management and corporate liquidity platform—to understand how enterprise software architects design systems that cannot afford to fail.
+          </p>
+
+          <h2>Key Architectural Concepts Explored</h2>
+          <ul>
+            <li>
+              <strong>Double-Entry Ledger Immutability:</strong> Analyzing why true financial platforms never perform destructive <code>UPDATE</code> or <code>DELETE</code> operations on balance tables, relying instead on strictly append-only credit/debit records that guarantee zero-sum transactional integrity.
+            </li>
+            <li>
+              <strong>Idempotency in Payment Pipelines:</strong> Studying unique idempotency keys, request deduplication windows, and distributed consensus mechanisms to ensure network retries never double-charge corporate accounts.
+            </li>
+            <li>
+              <strong>Audit Trails &amp; Regulatory Compliance:</strong> Examining how enterprise financial platforms embed non-repudiation timestamps and cryptographic hashes into every state transition to satisfy external auditor requirements.
+            </li>
+            <li>
+              <strong>Decoupled Service Topologies:</strong> Investigating event-driven architectures where payment ingestion, settlement reconciliation, and risk compliance screening operate as isolated asynchronous services.
+            </li>
+          </ul>
+
+          <h2>Understanding Complex Technical Documentation</h2>
+          <p>
+            Beyond the financial domain specifics, this study provided invaluable practice in <strong>navigating, deconstructing, and synthesizing enterprise-scale technical documentation</strong>. Being able to extract core architectural invariants, identify system bottlenecks, and articulate complex engineering jargon in simple terms is a vital skill for any software engineer.
+          </p>
+
+          <h2>Key Engineering Takeaways</h2>
+          <p>
+            The rigor mandated by fintech systems—idempotent APIs, immutable audit trails, and defensive concurrency controls—serves as an exemplary benchmark for building any high-reliability distributed application, from IoT telemetry pipelines to mission-critical web platforms.
+          </p>
+        </div>
+
+        <nav class="end-menu" aria-labelledby="apex-end-menu">
+          <h2 class="end-menu__title" id="apex-end-menu">Continue?</h2>
+          <ul class="end-menu__list">
+            <li>
+              <a class="end-menu__row" href="/projects/agriculture-platform/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Next<span class="visually-hidden"> project:</span></span>
+                <span class="end-menu__name">Smart Agriculture Web Platform</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/" data-back data-end-back data-island-loader data-index="5">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to the Game Boy</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="case-footer">
+    <p>Khush Salecha · AIML Student &amp; Developer · <a href="/projects/">All projects</a> · <a href="/">Game Boy</a></p>
+  </footer>
+</body>
+</html>
+

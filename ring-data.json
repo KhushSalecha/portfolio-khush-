@@ -1,0 +1,225 @@
+{
+  "v": 1,
+  "model": {
+    "src": "/models/gameboy.glb?v=054e237dfd",
+    "bytes": 1101768
+  },
+  "loops": [
+    {
+      "av1": "/media/hero/mapswipe-1f97ebb413-screen-h264.mp4",
+      "h264": "/media/hero/mapswipe-1f97ebb413-screen-h264.mp4",
+      "poster": "/media/hero/mapswipe-1f97ebb413-screen-poster.webp",
+      "w": 480,
+      "h": 270,
+      "page": {
+        "h264": "/media/hero/mapswipe-b9e2629238-page-h264.mp4",
+        "poster": "/media/hero/mapswipe-b9e2629238-page-poster.webp",
+        "w": 1920,
+        "h": 1080
+      },
+      "bytes": {
+        "av1": 210629,
+        "h264": 273506
+      }
+    },
+    {
+      "av1": "/media/hero/inteligas-0717bfb68a-screen-h264.mp4",
+      "h264": "/media/hero/inteligas-0717bfb68a-screen-h264.mp4",
+      "poster": "/media/hero/inteligas-0717bfb68a-screen-poster.webp",
+      "w": 480,
+      "h": 270,
+      "page": {
+        "h264": "/media/hero/inteligas-3e8d67f480-page-h264.mp4",
+        "poster": "/media/hero/inteligas-3e8d67f480-page-poster.webp",
+        "w": 1920,
+        "h": 1080
+      },
+      "bytes": {
+        "av1": 157639,
+        "h264": 218069
+      }
+    },
+    {
+      "av1": "/media/hero/pubpub-8949b02e7d-screen-h264.mp4",
+      "h264": "/media/hero/pubpub-8949b02e7d-screen-h264.mp4",
+      "poster": "/media/hero/pubpub-8949b02e7d-screen-poster.webp",
+      "w": 480,
+      "h": 270,
+      "page": {
+        "h264": "/media/hero/pubpub-2f0ffea7e2-page-h264.mp4",
+        "poster": "/media/hero/pubpub-2f0ffea7e2-page-poster.webp",
+        "w": 1920,
+        "h": 1080
+      },
+      "bytes": {
+        "av1": 110182,
+        "h264": 152952
+      }
+    },
+    {
+      "av1": "/media/hero/madonna-live-ce1b20474e-screen-h264.mp4",
+      "h264": "/media/hero/madonna-live-ce1b20474e-screen-h264.mp4",
+      "poster": "/media/hero/madonna-live-ce1b20474e-screen-poster.webp",
+      "w": 480,
+      "h": 270,
+      "page": {
+        "h264": "/media/hero/madonna-live-b588ba990c-page-h264.mp4",
+        "poster": "/media/hero/madonna-live-b588ba990c-page-poster.webp",
+        "w": 1920,
+        "h": 1080
+      },
+      "bytes": {
+        "av1": 370501,
+        "h264": 528594
+      }
+    },
+    {
+      "av1": "/media/hero/grindr-web-ec98b24adf-screen-h264.mp4",
+      "h264": "/media/hero/grindr-web-ec98b24adf-screen-h264.mp4",
+      "poster": "/media/hero/grindr-web-ec98b24adf-screen-poster.webp",
+      "w": 438,
+      "h": 270,
+      "page": {
+        "h264": "/media/hero/grindr-web-91ed0271a2-page-h264.mp4",
+        "poster": "/media/hero/grindr-web-91ed0271a2-page-poster.webp",
+        "w": 1754,
+        "h": 1080
+      },
+      "bytes": {
+        "av1": 154727,
+        "h264": 234833
+      }
+    },
+    {
+      "av1": "/media/hero/leangap-67914b219e-screen-h264.mp4",
+      "h264": "/media/hero/leangap-67914b219e-screen-h264.mp4",
+      "poster": "/media/hero/leangap-67914b219e-screen-poster.webp",
+      "w": 480,
+      "h": 270,
+      "page": {
+        "h264": "/media/hero/leangap-594f7b5b26-page-h264.mp4",
+        "poster": "/media/hero/leangap-594f7b5b26-page-poster.webp",
+        "w": 1920,
+        "h": 1080
+      },
+      "bytes": {
+        "av1": 366077,
+        "h264": 509790
+      }
+    }
+  ],
+  "projects": [
+    {
+      "slug": "agriculture-platform",
+      "title": "Smart Farm Platform",
+      "tagline": "AI crop recommendations, smart irrigation, and live weather insights.",
+      "loop": 0,
+      "fit": "cover"
+    },
+    {
+      "slug": "smart-farming-iot",
+      "title": "Smart Farm IoT",
+      "tagline": "ESP32 environmental sensing & hardware-software telemetry pipeline.",
+      "loop": 1,
+      "fit": "cover"
+    },
+    {
+      "slug": "farmers-offline-software",
+      "title": "Farmers Offline App",
+      "tagline": "Local-first management system for low-connectivity rural communities.",
+      "loop": 2,
+      "fit": "cover"
+    },
+    {
+      "slug": "festos-architecture",
+      "title": "FestOS Architecture",
+      "tagline": "College fest portal & database planned for 2,400+ attendees.",
+      "loop": 3,
+      "fit": "cover"
+    },
+    {
+      "slug": "data-processing-engine",
+      "title": "Python Data Engine",
+      "tagline": "Robust file parsing, JSON/CSV analytics, and structured record systems.",
+      "loop": 4,
+      "fit": "cover"
+    },
+    {
+      "slug": "apex-treasury-study",
+      "title": "ApexTreasury Study",
+      "tagline": "Architectural breakdown of fintech compliance & transaction ledgers.",
+      "loop": 5,
+      "fit": "cover"
+    }
+  ],
+  "about": {
+    "loop": {
+      "av1": "/media/hero/about-5829148529-screen-h264.mp4",
+      "h264": "/media/hero/about-5829148529-screen-h264.mp4",
+      "poster": "/media/hero/about-5829148529-screen-poster.webp",
+      "w": 480,
+      "h": 270,
+      "page": {
+        "h264": "/media/hero/about-9bec8ae505-page-h264.mp4",
+        "poster": "/media/hero/about-9bec8ae505-page-poster.webp",
+        "w": 1920,
+        "h": 1080
+      },
+      "bytes": {
+        "av1": 288992,
+        "h264": 408088
+      }
+    },
+    "title": "Khush Salecha",
+    "tagline": "AI/ML Student & Software Developer"
+  },
+  "blog": {
+    "title": "Blog",
+    "still": "/_astro/typewriter-b.D9nUD9Du.png",
+    "sound": {
+      "src": "/audio/blog-intro.mp3",
+      "v": "f1906586d9",
+      "bytes": 85344
+    }
+  },
+  "assets": {
+    "atlas": {
+      "v": "87640036a6",
+      "bytes": 17267
+    },
+    "audio": {
+      "json": "/audio/ui.json",
+      "v": "49c9f0f16d",
+      "bytes": 808
+    },
+    "music": {
+      "title": {
+        "src": "/audio/intro.mp3",
+        "v": "aa5e783287",
+        "bytes": 798672
+      },
+      "showcase": {
+        "src": "/audio/violet.mp3",
+        "v": "fe46d866c4",
+        "bytes": 784224,
+        "loop": {
+          "start": 23.167333,
+          "end": 55.811208
+        }
+      },
+      "battle": {
+        "src": "/audio/trainer-battle.mp3",
+        "v": "512de66ba6",
+        "bytes": 566160,
+        "loop": {
+          "start": 17.600854,
+          "end": 40.107792
+        }
+      }
+    }
+  },
+  "landing": {
+    "title": "Khush Salecha · \\AI & ML \\Software \\IoT",
+    "description": "Khush Salecha is a second-year B.Tech AIML student at Jain University, Kanakapura, engineering practical AI/ML solutions, web platforms, and IoT systems."
+  }
+}

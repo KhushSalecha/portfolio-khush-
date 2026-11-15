@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Smart Farming IoT &amp; Hardware Integration · Khush Salecha</title>
+  <meta name="description" content="ESP32 microcontroller integration, sensor telemetry, and hardware-to-software pipelines for agricultural field monitoring.">
+  <link rel="canonical" href="/projects/smart-farming-iot/">
+  <meta name="theme-color" content="#0f1110">
+  <meta property="og:site_name" content="Khush Salecha">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Smart Farming IoT &amp; Hardware Integration · Khush Salecha">
+  <meta property="og:description" content="ESP32 hardware integration, firmware flashing, and sensor telemetry for agricultural monitoring.">
+  <meta property="og:url" content="/projects/smart-farming-iot/">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1.3,1.9&amp;family=Press+Start+2P&amp;family=Redaction+35:ital,wght@0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/_astro/island.Cu5ZDGLw.css">
+  <link rel="stylesheet" href="/_astro/BaseLayout.Cu-CeA6V.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#article-body">Skip to the article</a>
+  
+  <nav class="back-nav" aria-label="Game Boy">
+    <a class="back" href="/" data-back data-island-loader data-index="1" aria-label="Back to the Game Boy">BACK</a>
+  </nav>
+
+  <main id="main">
+    <article class="cs" id="case-smart-farming-iot" data-slug="smart-farming-iot" data-hero-vh="0.85" style="--accent: #ed8936">
+      <header class="cs-hero" data-fit="cover" style="--hero-aspect: 1920 / 1080">
+        <div class="cs-hero__media">
+          <video class="cs-hero__video" muted playsinline loop preload="none" poster="/media/hero/inteligas-3e8d67f480-page-poster.webp" width="1920" height="1080" data-hero aria-hidden="true" tabindex="-1">
+            <source src="/media/hero/inteligas-3e8d67f480-page-h264.mp4" type="video/mp4; codecs=&quot;avc1.4D4028&quot;">
+          </video>
+        </div>
+        <div class="cs-hero__caption">
+          <h1 tabindex="-1">Smart Farming IoT &amp; Hardware Integration</h1>
+          <p class="cs-hero__tagline">ESP32 development board integration, sensor telemetry, and hardware-to-software pipelines.</p>
+        </div>
+        <div class="cs-hero__dither" aria-hidden="true"></div>
+      </header>
+
+      <div class="cs-body" id="article-body">
+        <dl class="cs-meta">
+          <dt>Category</dt>
+          <dd>Internet of Things · Embedded Systems · Hardware Integration</dd>
+          
+          <dt>Timeline</dt>
+          <dd>2026 · Active Hardware Prototyping</dd>
+          
+          <dt>Board</dt>
+          <dd>ESP32 DevKit V1 (30-pin) / Consideration of ESP8266</dd>
+          
+          <dt>Tooling</dt>
+          <dd>Arduino IDE, Serial Monitor, Embedded C/C++, CP210x USB Drivers</dd>
+          
+          <dt>Focus Areas</dt>
+          <dd>Firmware uploading, device detection, sensor telemetry, and hardware troubleshooting</dd>
+        </dl>
+
+        <p class="cs-impact">
+          Built and debugged an IoT hardware prototype using the ESP32 microcontroller to capture live environmental metrics—such as soil moisture, ambient humidity, and temperature—bridging physical field telemetry directly with web platforms.
+        </p>
+
+        <div class="prose">
+          <h2>Project Overview</h2>
+          <p>
+            Effective precision agriculture requires ground truth data: direct, real-time measurements from the soil and field conditions rather than regional estimates. This project represents a hands-on exploration of embedded systems and IoT hardware to construct a field monitoring sensor node capable of capturing telemetry and transmitting metrics to upstream dashboards.
+          </p>
+
+          <h2>Hardware Selection: ESP32 vs. ESP8266</h2>
+          <p>
+            A key architectural deliberation in this project was selecting the primary microcontroller platform. While the <strong>ESP8266</strong> was evaluated as an ultra-low-cost alternative, the <strong>ESP32</strong> was selected due to:
+          </p>
+          <ul>
+            <li><strong>Dual-Core Tensilica Xtensa 32-bit LX6:</strong> Allowing dedicated core separation between sensor polling routines and network communication tasks.</li>
+            <li><strong>Multi-Channel 12-bit ADCs:</strong> Enabling simultaneous connection of multiple analog soil sensors without requiring external multiplexers.</li>
+            <li><strong>Integrated Wi-Fi &amp; Bluetooth LE:</strong> Enabling both remote telemetry publishing and local device pairing for field technicians.</li>
+            <li><strong>Deep Sleep Power Modes:</strong> Essential for battery and solar-powered deployments in remote agricultural fields.</li>
+          </ul>
+
+          <h2>Development Workflow &amp; Firmware Uploading</h2>
+          <p>
+            Using the <strong>Arduino IDE</strong> and embedded C/C++, the development process involved configuring the ESP32 board support package, mapping GPIO pins for analog capacitive soil moisture sensors, and establishing robust baud-rate serial communication (115200 bps) for real-time telemetry streaming and debugging.
+          </p>
+
+          <h2>Hardware Troubleshooting &amp; Debugging Insights</h2>
+          <p>
+            Hardware prototyping always brings unique physical and electrical hurdles. Key technical issues diagnosed and resolved during this project included:
+          </p>
+          <ul>
+            <li>
+              <strong>COM Port Detection &amp; USB Drivers:</strong> Diagnosing host PC device detection failures by resolving USB-to-UART bridge driver issues (CP2102 vs. CH340 chipsets) and managing bootloader mode triggers (Boot button + EN pin sequence).
+            </li>
+            <li>
+              <strong>ADC Linearity &amp; Voltage Spikes:</strong> Compensating for the non-linear response of the ESP32 analog-to-digital converter near 0V and 3.3V thresholds using algorithmic mapping and multi-sample smoothing.
+            </li>
+            <li>
+              <strong>Sensor Corrosion Prevention:</strong> Evaluating capacitive moisture sensing techniques over resistive probes to eliminate direct electrolytic degradation caused by continuous DC currents in damp soil.
+            </li>
+          </ul>
+
+          <h2>Next Steps in Hardware Integration</h2>
+          <p>
+            Ongoing work focuses on integrating MQTT/HTTP telemetry transmission to dispatch field sensor payloads directly into the Smart Agriculture Web Platform backend, forming a closed-loop automated irrigation advisory system.
+          </p>
+        </div>
+
+        <nav class="end-menu" aria-labelledby="iot-end-menu">
+          <h2 class="end-menu__title" id="iot-end-menu">Continue?</h2>
+          <ul class="end-menu__list">
+            <li>
+              <a class="end-menu__row" href="/projects/farmers-offline-software/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Next<span class="visually-hidden"> project:</span></span>
+                <span class="end-menu__name">Farmers Offline Management Software</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/" data-back data-end-back data-island-loader data-index="1">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to the Game Boy</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="case-footer">
+    <p>Khush Salecha · AIML Student &amp; Developer · <a href="/projects/">All projects</a> · <a href="/">Game Boy</a></p>
+  </footer>
+</body>
+</html>
+

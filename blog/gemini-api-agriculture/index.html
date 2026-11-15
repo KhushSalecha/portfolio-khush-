@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Integrating LLMs into Domain Web Platforms: Gemini API · Khush Salecha</title>
+  <meta name="description" content="Combining deterministic rule-based algorithms with the Gemini API to build trustworthy agronomic advisory systems.">
+  <link rel="canonical" href="/blog/gemini-api-agriculture/">
+  <meta name="theme-color" content="#0f1110">
+  <meta property="og:site_name" content="Khush Salecha">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Integrating LLMs into Domain Web Platforms: Gemini API · Khush Salecha">
+  <meta property="og:url" content="/blog/gemini-api-agriculture/">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1.3,1.9&amp;family=Press+Start+2P&amp;family=Redaction+35:ital,wght@0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/_astro/island.Cu5ZDGLw.css">
+  <link rel="stylesheet" href="/_astro/BaseLayout.Cu-CeA6V.css">
+  <link rel="stylesheet" href="/_astro/blog.D5ECGHe1.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#article-body">Skip to the article</a>
+  
+  <nav class="back-nav" aria-label="Game Boy">
+    <a class="back" href="/blog/" data-back data-island-loader data-slug="blog" aria-label="Back to Blog">BACK</a>
+  </nav>
+
+  <main id="main">
+    <article class="cs bp" id="case-blog-gemini-api-agriculture" data-slug="blog/gemini-api-agriculture" data-hero-vh="0.6">
+      <header class="cs-hero" data-fit="cover" style="--hero-aspect: 1920 / 1080">
+        <div class="cs-hero__media">
+          <img class="cs-hero__video" src="/media/hero/mapswipe-b9e2629238-page-poster.webp" width="1920" height="1080" alt="" fetchpriority="high" decoding="async">
+        </div>
+        <div class="cs-hero__dither" aria-hidden="true"></div>
+      </header>
+
+      <div class="cs-body" id="article-body">
+        <header class="bp-head">
+          <h1 tabindex="-1">Integrating LLMs into Domain Web Platforms: Lessons with Gemini API</h1>
+          <div class="bp-byline">
+            <p class="bp-byline__who">
+              <a class="bp-byline__name" href="/about/">Khush Salecha</a>
+              <span class="bp-byline__title">B.Tech AIML Student &amp; Developer</span>
+            </p>
+            <p class="bp-byline__when">
+              <time datetime="2026-08-15">Aug 15, 2026</time>
+              <span class="bp-byline__minutes">4 min read</span>
+            </p>
+          </div>
+        </header>
+
+        <div class="prose">
+          <p>
+            Large Language Models (LLMs) are remarkable conversational interfaces, but connecting them directly to user-facing applications without guardrails is a recipe for hallucinations. In farming, giving an incorrect recommendation regarding fertilizer ratios or pesticide dilution can ruin an entire season's crop harvest.
+          </p>
+          <p>
+            During the development of our <strong>Smart Agriculture Web Platform</strong>, our primary engineering challenge was: <em>How do we leverage the communicative power of the Gemini API while guaranteeing strict agronomic accuracy?</em>
+          </p>
+
+          <h2>The Hybrid Architecture: Rules First, LLMs Second</h2>
+          <p>
+            Rather than asking the LLM to invent recommendations from scratch, we decoupled the architecture into two strictly bounded layers:
+          </p>
+          <ul>
+            <li>
+              <strong>Deterministic Calculation Engine:</strong> A local rule-based algorithm that calculates soil fertility indices, compares rainfall thresholds from Open-Meteo, and outputs an immutable structured JSON object (e.g., <code>suitability_score: 87, recommended_crops: ["Ragi", "Maize"], max_nitrogen_ppm: 40</code>).
+            </li>
+            <li>
+              <strong>Generative Synthesis Layer:</strong> The Gemini API receives the deterministic JSON payload injected as immutable system context, instructed solely to synthesize the advice into plain, friendly vernacular language.
+            </li>
+          </ul>
+
+          <h2>Strict JSON Schema Enforcement</h2>
+          <p>
+            Using Gemini's structured output mode (<code>response_mime_type: "application/json"</code>), we constrained the model to return predictable schemas rather than freeform prose. This allowed our React frontend to parse key advice pills, alert badges, and watering schedules directly into UI components without regex parsing hacks.
+          </p>
+
+          <h2>Key Engineering Takeaways</h2>
+          <p>
+            LLMs shine when treated as communicative synthesis engines rather than omniscient databases. By anchoring generative models to deterministic mathematical rules and live API data, you build AI-powered applications that are genuinely trustworthy.
+          </p>
+        </div>
+
+        <nav class="end-menu bp-menu" aria-labelledby="blog-post-end-menu-4">
+          <h2 class="end-menu__title" id="blog-post-end-menu-4">Continue?</h2>
+          <ul class="end-menu__list">
+            <li>
+              <a class="end-menu__row" href="/blog/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to Blog index</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/" data-back data-end-back data-island-loader data-slug="blog">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to the Game Boy</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="case-footer">
+    <p>Khush Salecha · AIML Student &amp; Developer · <a href="/projects/">All projects</a> · <a href="/">Game Boy</a></p>
+  </footer>
+</body>
+</html>
+

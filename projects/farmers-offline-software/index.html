@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Farmers Offline Management Software · Khush Salecha</title>
+  <meta name="description" content="Local-first offline management software designed to support farmers in remote regions with intermittent internet connectivity.">
+  <link rel="canonical" href="/projects/farmers-offline-software/">
+  <meta name="theme-color" content="#0f1110">
+  <meta property="og:site_name" content="Khush Salecha">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Farmers Offline Management Software · Khush Salecha">
+  <meta property="og:description" content="Local-first desktop architecture for rural agriculture management, offline persistence, and data synchronization.">
+  <meta property="og:url" content="/projects/farmers-offline-software/">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1.3,1.9&amp;family=Press+Start+2P&amp;family=Redaction+35:ital,wght@0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/_astro/island.Cu5ZDGLw.css">
+  <link rel="stylesheet" href="/_astro/BaseLayout.Cu-CeA6V.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#article-body">Skip to the article</a>
+  
+  <nav class="back-nav" aria-label="Game Boy">
+    <a class="back" href="/" data-back data-island-loader data-index="2" aria-label="Back to the Game Boy">BACK</a>
+  </nav>
+
+  <main id="main">
+    <article class="cs" id="case-farmers-offline-software" data-slug="farmers-offline-software" data-hero-vh="0.85" style="--accent: #4299e1">
+      <header class="cs-hero" data-fit="cover" style="--hero-aspect: 1920 / 1080">
+        <div class="cs-hero__media">
+          <video class="cs-hero__video" muted playsinline loop preload="none" poster="/media/hero/pubpub-2f0ffea7e2-page-poster.webp" width="1920" height="1080" data-hero aria-hidden="true" tabindex="-1">
+            <source src="/media/hero/pubpub-2f0ffea7e2-page-h264.mp4" type="video/mp4; codecs=&quot;avc1.4D4028&quot;">
+          </video>
+        </div>
+        <div class="cs-hero__caption">
+          <h1 tabindex="-1">Farmers Offline Management Software</h1>
+          <p class="cs-hero__tagline">Local-first management system designed for low-connectivity rural agricultural communities.</p>
+        </div>
+        <div class="cs-hero__dither" aria-hidden="true"></div>
+      </header>
+
+      <div class="cs-body" id="article-body">
+        <dl class="cs-meta">
+          <dt>Category</dt>
+          <dd>Software Development · Local-First Architecture · Agriculture Technology</dd>
+          
+          <dt>Timeline</dt>
+          <dd>2026 · Development Phase</dd>
+          
+          <dt>Repository</dt>
+          <dd>
+            <a href="https://github.com/jitesh0216/software-farmers" target="_blank" rel="noopener noreferrer">github.com/jitesh0216/software-farmers</a>
+          </dd>
+          
+          <dt>Technologies</dt>
+          <dd>Python 3, SQLite, Structured File I/O, JSON, CSV, CLI &amp; Desktop Architecture</dd>
+          
+          <dt>System Focus</dt>
+          <dd>Offline persistence, zero-latency local operations, data integrity, sync planning</dd>
+        </dl>
+
+        <p class="cs-impact">
+          Architected a standalone, local-first management system ensuring uninterrupted operational capability for farm inventory, harvest logs, and financial records in rural geographies with zero internet connectivity.
+        </p>
+
+        <div class="prose">
+          <h2>Motivation &amp; Offline-First Philosophy</h2>
+          <p>
+            Cloud-dependent software fails in rural agrarian belts where cell towers are distant and power grids face frequent blackouts. When software relies on continuous HTTP connections, a farmer cannot record a seed purchase, log fertilizer application, or check inventory if the internet drops.
+          </p>
+          <p>
+            The <strong>Farmers Offline Management Software</strong> was developed to serve as the reliable local counterpart to the broader agriculture web platform. The core tenet is simple: <em>all reads and writes must complete with zero latency against local disk storage, with networking treated purely as an opportunistic background synchronization layer.</em>
+          </p>
+
+          <h2>Core Functional Modules</h2>
+          <ul>
+            <li>
+              <strong>Farmer &amp; Landholdings Registry:</strong> Maintains local profiles of farmer identities, land parcel dimensions, soil classifications, and historical harvest yields.
+            </li>
+            <li>
+              <strong>Inventory &amp; Input Tracker:</strong> Records seed stock, fertilizer batches, pesticide applications, and machinery rentals with timestamped audit entries.
+            </li>
+            <li>
+              <strong>Yield &amp; Expense Ledger:</strong> Simple, intuitive accounting mechanism tracking production costs against market sale revenues.
+            </li>
+            <li>
+              <strong>Synchronization Dispatch Queue:</strong> An outbound transaction queue logging state changes locally to enable eventual consistency when reconnected to the primary cloud platform.
+            </li>
+          </ul>
+
+          <h2>Storage Architecture &amp; Data Resilience</h2>
+          <p>
+            Data durability is achieved through an embedded <strong>SQLite</strong> database combined with formatted human-readable <strong>JSON and CSV exports</strong>. SQLite ensures ACID transactions, preventing corrupted states during unexpected power loss, while CSV dumps allow farmers and field workers to open records in spreadsheet software without technical hurdles.
+          </p>
+          <p>
+            The software employs defensive programming paradigms: atomic file writes, automatic schema migrations on startup, and graceful error handling when storage files are missing or locked by concurrent processes.
+          </p>
+
+          <h2>Technical Learnings</h2>
+          <p>
+            This project provided deep insight into the intricacies of local-first state management, conflict-free data modeling, and the critical distinction between building for high-speed cloud environments versus designing for rural, offline reality.
+          </p>
+        </div>
+
+        <nav class="end-menu" aria-labelledby="offline-end-menu">
+          <h2 class="end-menu__title" id="offline-end-menu">Continue?</h2>
+          <ul class="end-menu__list">
+            <li>
+              <a class="end-menu__row" href="/projects/festos-architecture/">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Next<span class="visually-hidden"> project:</span></span>
+                <span class="end-menu__name">FestOS Event Architecture</span>
+              </a>
+            </li>
+            <li>
+              <a class="end-menu__row" href="/" data-back data-end-back data-island-loader data-index="2">
+                <span class="end-menu__cursor" aria-hidden="true"></span>
+                <span class="end-menu__key">Back</span>
+                <span class="end-menu__name">to the Game Boy</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="case-footer">
+    <p>Khush Salecha · AIML Student &amp; Developer · <a href="/projects/">All projects</a> · <a href="/">Game Boy</a></p>
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Contact Khush · Database Submission</title>
+  <meta name="description" content="Contact Khush Salecha. Submissions are stored directly in SQLite database via Python backend.">
+  <link rel="canonical" href="/contact/">
+  <meta name="theme-color" content="#0f1110">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1.3,1.9&amp;family=Press+Start+2P&amp;family=Redaction+35:ital,wght@0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/_astro/island.Cu5ZDGLw.css">
+  <link rel="stylesheet" href="/_astro/BaseLayout.Cu-CeA6V.css">
+  
+  <style>
+    .contact-page-container {
+      max-width: 680px;
+      margin: 48px auto 80px;
+      padding: 0 20px;
+    }
+    .contact-card {
+      background: #141916;
+      border: 1px solid #27342d;
+      border-radius: 6px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .contact-page-title {
+      font-size: 2.2rem;
+      font-family: "Redaction 35", Georgia, serif;
+      font-weight: 700;
+      color: #f0f3f1;
+      margin: 0 0 12px 0;
+    }
+    .contact-page-desc {
+      color: #92a49b;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .form-label {
+      font-family: "Press Start 2P", monospace;
+      font-size: 0.65rem;
+      color: #92a49b;
+      letter-spacing: 0.04em;
+    }
+    .form-input {
+      background: #0d110f;
+      border: 1px solid #283730;
+      color: #f0f4f2;
+      padding: 12px 14px;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: #48bb78;
+      box-shadow: 0 0 0 2px rgba(72,187,120,0.25);
+      background: #111714;
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .form-btn {
+      background: #1f3d30;
+      border: 1px solid #326752;
+      color: #68d391;
+      font-family: "Press Start 2P", monospace;
+      font-size: 0.75rem;
+      padding: 14px 22px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.15s ease;
+    }
+    .form-btn:hover {
+      background: #2a5543;
+      border-color: #48bb78;
+      color: #9ae6b4;
+    }
+    .form-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .form-db-btn {
+      color: #81e6d9;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .form-db-btn:hover {
+      text-decoration: underline;
+    }
+    .form-alert {
+      margin-top: 20px;
+      padding: 14px 18px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      display: none;
+    }
+    .form-alert--success {
+      background: #12281e;
+      border: 1px solid #276749;
+      color: #9ae6b4;
+      display: block;
+    }
+    .form-alert--error {
+      background: #2d1818;
+      border: 1px solid #9b2c2c;
+      color: #feb2b2;
+      display: block;
+    }
+  </style>
+</head>
+<body class="plain">
+  <nav class="back-nav" aria-label="Game Boy">
+    <a class="back" href="/" data-back aria-label="Back to the Game Boy">BACK</a>
+  </nav>
+
+  <div class="contact-page-container">
+    <h1 class="contact-page-title">Contact Khush Salecha</h1>
+    <p class="contact-page-desc">
+      Fill out the fields below. Once submitted, your details are received by the Python backend service and stored directly into the <strong>SQLite database (<code>contacts.db</code>)</strong>.
+    </p>
+
+    <div class="contact-card">
+      <form id="contactForm" onsubmit="submitContactForm(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="formName" class="form-label">Full Name *</label>
+            <input type="text" id="formName" name="name" required placeholder="e.g. Alex Johnson" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label for="formNumber" class="form-label">Phone Number *</label>
+            <input type="tel" id="formNumber" name="number" required placeholder="e.g. +91 98765 43210" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="formEmail" class="form-label">Email Address *</label>
+          <input type="email" id="formEmail" name="email" required placeholder="e.g. alex@example.com" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="formMessage" class="form-label">Message (Optional)</label>
+          <textarea id="formMessage" name="message" rows="4" placeholder="Briefly describe what you'd like to discuss or collaborate on..." class="form-input form-textarea"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submitBtn" class="form-btn">
+            ▶ SUBMIT TO DATABASE
+          </button>
+
+          <a href="/database/" class="form-db-btn">
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+              <path d="M8 1a7 7 0 0 0-7 7v4a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a7 7 0 0 0-7-7z"/>
+            </svg>
+            View SQLite Records
+          </a>
+        </div>
+
+        <div id="formAlert" class="form-alert"></div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="plain-footer">
+    <p>
+      <a href="/">Back to the Game Boy</a> · 
+      <a href="/about/">About</a> · 
+      <a href="/database/">Database Inspector</a>
+    </p>
+  </footer>
+
+  <script>
+    async function submitContactForm(event) {
+      event.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const alertBox = document.getElementById('formAlert');
+      
+      const payload = {
+        name: document.getElementById('formName').value.trim(),
+        number: document.getElementById('formNumber').value.trim(),
+        email: document.getElementById('formEmail').value.trim(),
+        message: document.getElementById('formMessage').value.trim()
+      };
+
+      btn.disabled = true;
+      btn.textContent = 'SAVING TO SQLITE...';
+      alertBox.className = 'form-alert';
+      alertBox.style.display = 'none';
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        if (!res.ok || !data.success) {
+          throw new Error(data.error || 'Failed to save contact details.');
+        }
+
+        alertBox.className = 'form-alert form-alert--success';
+        alertBox.innerHTML = `
+          <strong>SUCCESS!</strong> Your details were recorded in <code>contacts.db</code> as entry <strong>#${data.id}</strong>.<br>
+          <span style="font-size:0.8rem; margin-top:6px; display:inline-block;">
+            <a href="/database/" style="color:#68d391; text-decoration:underline;">Click here to inspect the database record &rarr;</a>
+          </span>
+        `;
+        document.getElementById('contactForm').reset();
+      } catch (err) {
+        alertBox.className = 'form-alert form-alert--error';
+        alertBox.textContent = 'Error: ' + err.message;
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '▶ SUBMIT TO DATABASE';
+      }
+    }
+  </script>
+</body>
+</html>
+
